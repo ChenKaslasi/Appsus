@@ -81,7 +81,7 @@ function _createNotes() {
       id: utilService.makeId(),
       isPinned: true,
       info: {
-        url: 'https://www.youtube.com/watch?v=qKlUpmZwsyw&ab_channel=NonstopMusic',
+        url: 'https://www.youtube.com/watch?v=PIU80XHVsus&ab_channel=MusicLab',
         title: 'ABABABA'
       },  
       backgroundColor: '00d',
@@ -124,7 +124,7 @@ function _createNotes() {
       backgroundColor: '00d',
     },
   ]
-  utilsService.storeToStorage(NOTES_KEY, defaultNotes);
+  utilService.storeToStorage(NOTES_KEY, defaultNotes);
   return defaultNotes;
 };
 

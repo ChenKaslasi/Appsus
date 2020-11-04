@@ -5,9 +5,10 @@ export default {
     <div>
       <ul>
         <li v-for="todo in info.todos">
-          <p>this is todoNote item --- {{todo.txt}}</p>
+          <p>{{todo.txt}}</p>
         </li>
       </ul>
+      <i class="fa fa-list note-type"></i> 
     </div>
   </section>
   `

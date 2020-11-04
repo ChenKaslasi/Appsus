@@ -37,7 +37,7 @@ function addNote(note) {
 function deleteNote() {
   let idx = gNotes.findIndex(note => note.id === noteId)
   gNotes.splice(idx, 1);
-  utilsService.storeToStorage(NOTES_KEY, gNotes)
+  utilService.storeToStorage(NOTES_KEY, gNotes)
 };
 
 function updateNote() {
@@ -124,7 +124,7 @@ function _createNotes() {
       backgroundColor: '00d',
     },
   ]
-  utilsService.storeToStorage(NOTES_KEY, defaultNotes);
+  utilService.storeToStorage(NOTES_KEY, defaultNotes);
   return defaultNotes;
 };
 

@@ -1,0 +1,9 @@
+.mail-list-container {
+    max-width:1200px;
+    margin: 0 auto;
+    border: 1px solid rgb(214, 214, 214);
+}
+
+.mail-list-container ul {
+    list-style: none;
+}

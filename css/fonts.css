@@ -1,9 +1,9 @@
 @font-face {
     font-family: roboto;
-    src: url(../assets/Roboto-Regular.ttf);
+    src: url(../assets/font/Roboto-Regular.ttf);
 }
 
 @font-face {
     font-family: roboto-bold;
-    src: url(../assets/Roboto-Bold.ttf);
+    src: url(../assets/font/Roboto-Bold.ttf);
 }

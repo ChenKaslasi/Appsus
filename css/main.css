@@ -1,4 +1,6 @@
 @import '/css/fonts.css';
+@import '/css/main-nav-bar.css';
+
 
 * {
     box-sizing: border-box;

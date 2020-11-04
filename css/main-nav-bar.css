@@ -1,0 +1,11 @@
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1rem;
+  background-color: lightblue;
+}
+
+.app-header nav>*{
+margin-inline-end: 0.75rem;
+}

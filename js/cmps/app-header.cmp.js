@@ -8,7 +8,8 @@ export default {
             <router-link to="/mail" >MisterEmail</router-link>
             <router-link to="/keep" >MissKeep</router-link>
             <router-link to="/about">About Us</router-link>
-        </nav>        
+        </nav> 
+            
 </header>
   `
 }

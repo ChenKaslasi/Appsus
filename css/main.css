@@ -1,39 +1,15 @@
+/* Genral */
+
 @import '/css/fonts.css';
 @import '/css/main-nav-bar.css';
+@import '/css/base.css';
+@import '/css/helpers.css';
 
 
-* {
-    box-sizing: border-box;
-}
+/* Apps */
 
-html {
-    font-family: roboto;
-    margin: 0;
-}
-
-button {
-    cursor: pointer;
-    outline: none;
-    border: none;
-}
-
-a {
-    text-decoration: none;
-    color: black;
-}
-
-ul {
-    margin: 0;
-    padding: 0;
-}
-
-textarea {
-    resize: none;
-}
-
-h1,h2,h3,h4,h5,h6 {
-    margin: 0;
-    padding: 0;
-}
+@import '/css/apps/books/books-main.css';
+@import '/css/apps/keep/keep-main.css';
+@import '/css/apps/mail/email-main.css';
 
 

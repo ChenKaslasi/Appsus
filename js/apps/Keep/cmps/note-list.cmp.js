@@ -10,8 +10,8 @@ export default {
   <section class="note-list">
     <!-- <pre>{{this.notes}}</pre> -->
     <h1>{{pinnedType}}</h1>
-    <div class="notes">
-      <div class="note-container" v-for="note in notes" :key="note.id">
+    <div class="notes flex">
+      <div class="note-container flex justify-center" v-for="note in notes" :key="note.id">
         <note-preview :note="note" />
       </div>
     </div>
@@ -19,7 +19,7 @@ export default {
   `,
   data() {
     return {
-      
+
     }
   },
   methods: {

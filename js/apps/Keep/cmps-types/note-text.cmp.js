@@ -2,8 +2,10 @@ export default {
   props: ['info'],
   template: `
   <section class="note-text">
-    <h4>{{info.txt}}</h4>
-    <i class="fa fa-font note-type"></i>
+    <div class="flex column">
+      <h4 class="note-title flex align-center"><i class="fa fa-font note-type"></i> {{info.txt}}</h4>
+      
+    </div>
   </section>
   `
 }

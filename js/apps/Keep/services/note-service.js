@@ -81,7 +81,7 @@ function _createNotes() {
       id: utilService.makeId(),
       isPinned: true,
       info: {
-        url: 'https://www.youtube.com/watch?v=qKlUpmZwsyw&ab_channel=NonstopMusic',
+        url: 'https://www.youtube.com/watch?v=PIU80XHVsus&ab_channel=MusicLab',
         title: 'ABABABA'
       },  
       backgroundColor: '00d',

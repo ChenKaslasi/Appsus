@@ -3,8 +3,9 @@ export default {
   template: `
   <section class="note-img">
     <div>
-    <h2>this is imgNote ---{{info.title}}</h2>  
-    <img :src="info.img">
+    <h2>{{info.title}}</h2>  
+    <img :src="info.url">
+    <i class="fa fa-image note-type"></i>
     </div>
   </section>
   `,

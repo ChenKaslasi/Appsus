@@ -15,8 +15,8 @@ export default {
   <section class="keep-app">
   <note-filter />
   <note-add />
-  <note-list :notes="notes"/> 
-  <!-- <note-list/>  -->
+  <note-list :notes="notes" pinnedType="Pinned Notes"/> 
+  <note-list :notes="notes" pinnedType="Other Notes"/> 
   </section>
   `,
   data() {

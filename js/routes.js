@@ -21,12 +21,12 @@ const myRoutes = [
         component: mailApp,
         children: [
             {
-                path: ':mailId',
-                component: mailDetails
+                path: 'compose',
+                component: mailCompose
             },
             {
-                path: 'mailCompose',
-                component: mailCompose
+                path: ':mailId',
+                component: mailDetails
             },
         ]
     },
@@ -35,9 +35,9 @@ const myRoutes = [
         component: keepApp
     },
     {
-      path: '/about',
-      component: aboutPage
-  },
+        path: '/about',
+        component: aboutPage
+    },
 ]
 
 

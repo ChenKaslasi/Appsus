@@ -1,15 +1,15 @@
 /* Genral */
 
-@import '/css/main-nav-bar.css';
-@import '/css/fonts.css';
-@import '/css/base.css';
-@import '/css/helpers.css';
+@import 'main-nav-bar.css';
+@import 'fonts.css';
+@import 'base.css';
+@import 'helpers.css';
 
 
 /* Apps */
 
-@import '/css/apps/books/books-main.css';
-@import '/css/apps/keep/keep-main.css';
-@import '/css/apps/mail/email-main.css';
+@import 'apps/books/books-main.css';
+@import 'apps/keep/keep-main.css';
+@import 'apps/mail/email-main.css';
 
 

@@ -3,7 +3,7 @@ import {utilService} from '../../../services/util-service.js';
 
 
 const NOTES_KEY = 'notes';
-const gNotes = _createNotes;
+const gNotes = _createNotes();
 
 
 export const noteService = {
@@ -64,7 +64,7 @@ function _createNotes() {
         url: 'https://media.giphy.com/media/12KDk0YabBSJHy/giphy.gif',
         title: 'The mask gif',
       },  
-      backgroundColor: '#fffd88',
+      backgroundColor: '00d',
     },
     {
       type: 'noteImg',
@@ -74,7 +74,7 @@ function _createNotes() {
         url: 'https://media.giphy.com/media/dTzxp1oRJSuze/giphy.gif',
         title: 'Bike',
       },  
-      backgroundColor: '#fffd88',
+      backgroundColor: '00d',
     },
     {
       type: 'noteVideo',
@@ -82,9 +82,9 @@ function _createNotes() {
       isPinned: true,
       info: {
         url: 'https://www.youtube.com/watch?v=qKlUpmZwsyw&ab_channel=NonstopMusic',
-        title: 'TRALALA'
+        title: 'ABABABA'
       },  
-      backgroundColor: '#fffd88',
+      backgroundColor: '00d',
     },
     {
       type: 'noteTodos',
@@ -92,13 +92,13 @@ function _createNotes() {
       isPinned: true,
       info: {
         todos: [
-          { txt: 'Eat', doneAt: true },
-          { txt: 'Sleep', doneAt: false },
-          { txt: 'Code', doneAt: true },
-          { txt: 'Repeat', doneAt: true },
+          { txt: 'A', doneAt: true },
+          { txt: 'B', doneAt: false },
+          { txt: 'C', doneAt: true },
+          { txt: 'D', doneAt: true },
         ],
       },
-    backgroundColor: '#fffd88',
+    backgroundColor: '00d',
   },
     {
       type: 'noteTodos',
@@ -106,22 +106,22 @@ function _createNotes() {
       isPinned: true,
       info: {
         todos: [
-          { txt: 'Drag', doneAt: true },
-          { txt: 'Drop', doneAt: true },
-          { txt: 'Flex', doneAt: true },
-          { txt: 'Box', doneAt: true },
+          { txt: 'A', doneAt: true },
+          { txt: 'B', doneAt: true },
+          { txt: 'C', doneAt: true },
+          { txt: 'D', doneAt: true },
         ],
       },
-    backgroundColor: '#fffd88',
+    backgroundColor: '00d',
   },
     {
       type: 'noteText',
       id: utilService.makeId(),
       isPinned: true,
       info: {
-        txt:`What's the meaning of life ? Drag us to find out :)`
+        txt:`ABABABABABA`
       },
-      backgroundColor: '#fffd88',
+      backgroundColor: '00d',
     },
   ]
   utilsService.storeToStorage(NOTES_KEY, defaultNotes);

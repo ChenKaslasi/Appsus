@@ -7,16 +7,24 @@ import noteList from '../cmps/note-list.cmp.js';
 export default {
   name: 'keep-app',
   components: {
-    
+    noteFilter,
+    noteAdd,
+    noteList
   },
   template: `
   <section class="keep-app">
   <note-filter />
   <note-add />
-  <!-- pinned list -->
-  <note-list/> 
-  <!-- unPinned list -->
-  <note-list/>
+  <note-list :notes="notes"/> 
+  <!-- <note-list/>  -->
   </section>
-  `
+  `,
+  data() {
+    return {
+      notes: null,
+    }
+  },
+  created() {
+    noteService.getNotes().then(notes => this.notes = notes);
+  }
 }

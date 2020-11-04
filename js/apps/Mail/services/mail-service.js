@@ -15,21 +15,21 @@ function loadMails() {
     if (!mails || !mails.length) {
         mails = [
             {
-                sender: 'Mike',
-                subject: 'Wassap?',
-                body: 'Pick up!',
-                isRead: false,
-                sentAt: new Date(),
-                id: utilService.makeId()
-            },
-            {
                 sender: 'Ron',
                 subject: 'New subscribe',
                 body: 'Welcome back thx',
                 isRead: false,
-                sentAt: new Date(),
+                sentAt: Date.now(),
                 id: utilService.makeId()
-            }
+            },
+            {
+                sender: 'Mike',
+                subject: 'Wassap?',
+                body: 'Pick up!',
+                isRead: true,
+                sentAt: 1551133930594,
+                id: utilService.makeId()
+            },
         ];
         utilService.storeToStorage('mailDB', mails)
     }

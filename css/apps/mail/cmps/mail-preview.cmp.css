@@ -1,3 +1,25 @@
 .mail-preview {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.25em 0.75em;
+    font-family: roboto-bold;
+    font-size: 0.875rem;
+    line-height: 1.428em;
+    color: #202124;
+}
+
+.mail-preview.is-read {
+    font-family: roboto;
+}
+
+/* .mail-preview > * {
+  } */
+
+.mail-preview .sender {
+    flex-grow: 1;
+}
+
+.mail-preview .body {
+    flex-grow: 2;
 }

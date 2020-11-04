@@ -1,10 +1,30 @@
 import {noteService} from '../services/note-service.js';
+import noteFilter from '../cmps/note-filter.cmp.js';
+import noteAdd from '../cmps/note-add.cmp.js';
+import noteList from '../cmps/note-list.cmp.js';
+
 
 export default {
   name: 'keep-app',
+  components: {
+    noteFilter,
+    noteAdd,
+    noteList
+  },
   template: `
   <section class="keep-app">
-    <h1>keep-app</h1>
+  <note-filter />
+  <note-add />
+  <note-list :notes="notes"/> 
+  <!-- <note-list/>  -->
   </section>
-  `
+  `,
+  data() {
+    return {
+      notes: null,
+    }
+  },
+  created() {
+    noteService.getNotes().then(notes => this.notes = notes);
+  }
 }

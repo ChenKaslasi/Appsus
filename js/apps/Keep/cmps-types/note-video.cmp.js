@@ -2,9 +2,11 @@ export default {
   props: ['info'],
   template: `
   <section class="note-video">
-    <div class="video-responsive">
-      <iframe width="420" height="315" :src="transformVideoUrl"></iframe>
+    <div class="video-responsive flex column">
+      <iframe :src="transformVideoUrl"></iframe>
     </div>
+    <h4 class="note-title flex align-center"><i class="fa fa-youtube"></i>{{info.title}}</h4>
+    
   </section>
   `,
   data() {

@@ -1,4 +1,10 @@
 @import 'note-preview.css';
 @import 'note-list.css';
 @import 'note-add.css';
+@import 'note-filter.css';
 
+
+.keep-app {
+  background-color: #ddd;
+  padding: 1rem;
+}

@@ -8,7 +8,6 @@ export default {
   },
   template: `
   <section class="note-list">
-    <!-- <pre>{{this.notes}}</pre> -->
     <h1>{{getTitle}}</h1>
     <div class="notes flex">
       <div class="note-container flex justify-center" v-for="note in notes" :key="note.id">

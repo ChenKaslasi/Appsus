@@ -44,11 +44,12 @@ const myRoutes = [
                 path: 'compose',
                 component: mailCompose
             },
-            {
-                path: ':mailId',
-                component: mailDetails
-            },
+            
         ]
+    },
+    {
+        path: '/mail/:mailId',
+        component: mailDetails
     },
     {
         path: '/keep',

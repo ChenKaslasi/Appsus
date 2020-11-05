@@ -3,7 +3,26 @@ import { utilService } from '../../../services/util-service.js'
 const gMails = loadMails()
 
 export const mailService = {
-    getMails
+    getMails,
+    saveMailsToStorage,
+    removeMail,
+    getMailById
+}
+
+function getMailById(id) {
+    const mail =  gMails.find(currMail => currMail.id === id)
+    return Promise.resolve(mail)
+}
+
+function removeMail(mailId) {
+    const idx = gMails.findIndex(mail => mail.id === mailId);
+    gMails.splice(idx, 1);
+    saveMailsToStorage()
+    return Promise.resolve()
+}
+
+function saveMailsToStorage() {
+    utilService.storeToStorage('mailDB', gMails)
 }
 
 function getMails() {

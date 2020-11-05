@@ -11,3 +11,7 @@
 .mail-list-container li {
     border-bottom: 1px solid rgb(214, 214, 214);
 }
+
+.mail-list-container li:hover {
+   cursor: pointer;
+}

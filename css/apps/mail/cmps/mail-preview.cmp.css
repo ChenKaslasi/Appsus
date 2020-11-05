@@ -7,9 +7,10 @@
     font-size: 0.875rem;
     line-height: 1.428em;
     color: #202124;
+    position: relative;
 }
 
-.mail-preview.is-read {
+.mail-preview.read {
     font-family: roboto;
 }
 
@@ -22,4 +23,13 @@
 
 .mail-preview .body {
     flex-grow: 2;
+}
+
+/* .sent-at {
+    flex-grow: 1;
+} */
+
+.buttons-container {
+    position: absolute;
+    right: 0.75em;
 }

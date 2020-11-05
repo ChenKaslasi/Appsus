@@ -15,13 +15,19 @@ export default {
   template: `
   <section class="note-preview flex column justify-center" :style="noteColor" v-if="isNotePinned" >
     <container v-if="!editMode" :is="note.type" :info="note.info" />
-    <form class="edit-mode" v-else  @submit.prevent="setUrlEdit">
-      <label >Edit source</label>
-      <input type="text" placeholder="Add URL" v-model="editUrlVal">
+    <form class="edit-mode" v-else  >
+      <label v-if="urlToedit">Edit source 
+        <input type="text" placeholder="Add URL" v-model="editUrlVal" @keyup.enter.prevent="setUrlEdit">
+      </label>
+      <label v-if="txtToEdit">Edit content 
+        <input type="text" placeholder="Enter text" v-model="editTxtVal" @keyup.enter.prevent="setTxtToEdit">
+      </label>
     </form>
     <div v-if="colorsPicker"  class="colors-container">
         <span v-for="color in colors" :style="{backgroundColor:color}" @click.stop="setNoteColor(color)"></span>
     </div>
+
+  <!-- <pre>{{note}}</pre> -->
 
     <div class="note-controls">
       <button title="Send to mail" @click="sendToMail" > 
@@ -51,6 +57,9 @@ export default {
       colorsPicker: false,
       editMode: false,
       editUrlVal: '',
+      editTxtVal: '',
+      txtToEdit: false,
+      urlToedit: false
     }
   },
   methods: {
@@ -77,14 +86,12 @@ export default {
       this.toggleColor()
     },
     setUrlEdit() {
-      console.log( this.note.type);
-     if(this.note.type === 'noteImg' || this.note.type === 'noteVideo') {
       noteService.changeNoteUrl(this.editUrlVal,this.note.id)
       this.toggleEditNote()
-     }
     },
-    setListEdit() {
-
+    setTxtToEdit() {
+      noteService.changeNoteTxt(this.editTxtVal,this.note.id)
+      this.toggleEditNote()
     }
   },
   computed: {
@@ -94,5 +101,10 @@ export default {
     noteColor() {
       return { backgroundColor: this.note.backgroundColor };
     },
+  },
+  created() {
+    if(this.note.type === 'noteImg' || this.note.type === 'noteVideo') {
+      this.urlToedit = true
+    } else {this.txtToEdit = true}
   }
 }

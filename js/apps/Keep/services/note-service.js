@@ -13,7 +13,8 @@ export const noteService = {
   copyNote,
   updateNote,
   changeColor,
-  changeNoteUrl
+  changeNoteUrl,
+  changeNoteTxt
 };
 
 
@@ -23,10 +24,14 @@ function getNotes() {
 
 
 
-function addNote(note) {
-  if(note.type === 'noteImg' || note.type === 'noteVideo') {
-    note.info.url = note.info.txt 
-    note.info.txt = 'New note!'
+function addNote(noteType,content) {
+  let note = _getEmptyNote(noteType);
+  if(noteType === 'noteImg' || noteType === 'noteVideo') {
+    note.info.url = content
+  } else if (noteType === 'noteTodos') {
+    note.info.title = content
+  } else {
+    note.info.txt = content
   }
   gNotes.unshift(note);
   utilService.storeToStorage(NOTES_KEY,gNotes)
@@ -57,11 +62,68 @@ function changeNoteUrl(url,noteId) {
   _getNoteById(noteId).then(note => note.info.url = url)
 }
 
+function changeNoteTxt(txt,noteId) {
+  _getNoteById(noteId).then(note => note.info.txt = txt)
+}
 
 function _getNoteById(noteId) {
   const note = gNotes.find( note => note.id === noteId)
   return Promise.resolve(note)
 };
+
+
+function _getEmptyNote(noteType) {
+  switch(noteType) {
+    case 'noteImg' :
+    return {
+      type: 'noteImg',
+      id: utilService.makeId(),
+      isPinned: true,
+      info: {
+        url: 'https://media.giphy.com/media/QhjR3MG9ZFfjB6BtIZ/giphy.gif',
+        title: 'new image!',
+      },  
+      backgroundColor: '#EEFF1D',
+    }
+    case 'noteTodos' :
+    return {
+      type: 'noteTodos',
+      id: utilService.makeId(),
+      isPinned: true,
+      info: {
+        title: 'new Todo list ',
+        todos: [
+          { txt: 'Todo A', doneAt: true },
+          { txt: 'Todo B', doneAt: false },
+          { txt: 'Todo C', doneAt: true },
+          { txt: 'Todo D', doneAt: true },
+        ],
+      },
+    backgroundColor: '#EEFF1D',
+    }
+    case 'noteText' :
+     return {
+        type: 'noteText',
+        id: utilService.makeId(),
+        isPinned: true,
+        info: {
+          txt:`new text note!`
+        },
+        backgroundColor: '#FFFFFF',
+    }
+    case 'noteVideo' :
+    return {
+      type: 'noteVideo',
+    id: utilService.makeId(),
+    isPinned: true,
+    info: {
+      url: 'https://www.youtube.com/watch?v=PIU80XHVsus&ab_channel=MusicLab',
+      title: 'new video note !'
+    },  
+    backgroundColor: '#FFFFFF',
+    }
+  }
+}
 
 
 function _createNotes() {
@@ -100,7 +162,7 @@ function _createNotes() {
       info: {
         txt:`ABABABABABA`
       },
-      backgroundColor: 'F4D736',
+      backgroundColor: '#FFFFFF',
     },
     {
       type: 'noteImg',
@@ -135,7 +197,7 @@ function _createNotes() {
       url: 'https://www.youtube.com/watch?v=PIU80XHVsus&ab_channel=MusicLab',
       title: 'ABABABA'
     },  
-    backgroundColor: 'F4D736',
+    backgroundColor: '#FFFFFF',
   },
   {
     type: 'noteImg',
@@ -151,4 +213,5 @@ function _createNotes() {
   utilService.storeToStorage(NOTES_KEY, defaultNotes);
   return defaultNotes;
 };
+
 

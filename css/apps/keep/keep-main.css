@@ -1,6 +1,12 @@
 @import 'note-preview.css';
 @import 'note-list.css';
+@import 'note-add.css';
+
 
 i{
   font-size: 2rem !important;
+}
+
+body {
+  background-color: rgb(214, 214, 214);
 }

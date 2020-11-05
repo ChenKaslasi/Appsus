@@ -3,12 +3,17 @@
     justify-content: space-between;
     align-items: center;
     padding: 0.25em 0.75em;
-    font-family: roboto-bold;
     font-size: 0.875rem;
     line-height: 1.428em;
+    font-family: roboto-bold;
     color: #202124;
     position: relative;
 }
+
+/* .mail-preview .mail-sender, .mail-preview .mail-body{
+    font-family: roboto-bold;
+    font-weight: 700;
+} */
 
 .mail-preview.read {
     font-family: roboto;
@@ -17,15 +22,15 @@
 /* .mail-preview > * {
   } */
 
-.mail-preview .sender {
+.mail-preview .mail-sender {
     flex-grow: 1;
 }
 
-.mail-preview .body {
+.mail-preview .mail-body {
     flex-grow: 2;
 }
 
-/* .sent-at {
+/*.mail-preview .mail-sent-at {
     flex-grow: 1;
 } */
 
@@ -34,7 +39,7 @@
     right: 0.75em;
 }
 
-.buttons-container .btn{
+.buttons-container .btn {
     background-color: #fff;
 }
 

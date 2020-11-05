@@ -8,7 +8,7 @@ export default {
       <router-link to="/mail" class="btn"><i class="icon fa fa-arrow-left"></i></router-link>
       <button class="btn" @click="deleteMail()"><i class="icon fas fa-trash"></i></button>
     </div>
-    <div v-if="mail">{{mail}}</div>
+    <div>{{mail}}</div>
   </section>
   `,
   data() {

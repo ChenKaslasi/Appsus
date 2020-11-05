@@ -5,9 +5,9 @@ export default {
     props: ['mail'],
     template: `
     <section class="mail-preview" :class="isRead"  @mouseover="toggleShouldShowButtons" @mouseout="toggleShouldShowButtons">
-        <div class="sender">{{mail.sender}}</div>
-        <div class="body">{{mail.subject}} - {{mail.body}}</div>
-        <div class="sent-at">{{sentAt}}</div>
+        <div class="mail-sender">{{mail.sender}}</div>
+        <div class="mail-body">{{mail.subject}} - {{mail.body}}</div>
+        <div class="mail-sent-at">{{sentAt}}</div>
         <div v-show="shouldShowButtons" class="buttons-container">
             <button class="btn" @click.stop="deleteMail()"><i class="icon fas fa-trash trash"></i></button>
             <button class="btn" @click.stop="toggleRead()"><i class="icon fa" :class="isOpen"></i></button>

@@ -31,7 +31,7 @@ function addNote(noteType,content) {
   } else if (noteType === 'noteTodos') {
     note.info.title = content
   } else {
-    note.info.txt = content
+    note.info.title = content
   }
   gNotes.unshift(note);
   utilService.storeToStorage(NOTES_KEY,gNotes)
@@ -63,7 +63,7 @@ function changeNoteUrl(url,noteId) {
 }
 
 function changeNoteTxt(txt,noteId) {
-  _getNoteById(noteId).then(note => note.info.txt = txt)
+  _getNoteById(noteId).then(note => note.info.title = txt)
 }
 
 function _getNoteById(noteId) {
@@ -93,10 +93,10 @@ function _getEmptyNote(noteType) {
       info: {
         title: 'new Todo list ',
         todos: [
-          { txt: 'Todo A', doneAt: true },
-          { txt: 'Todo B', doneAt: false },
-          { txt: 'Todo C', doneAt: true },
-          { txt: 'Todo D', doneAt: true },
+          { txt: 'Todo A', done: true },
+          { txt: 'Todo B', done: false },
+          { txt: 'Todo C', done: true },
+          { txt: 'Todo D', done: true },
         ],
       },
     backgroundColor: '#EEFF1D',
@@ -107,7 +107,7 @@ function _getEmptyNote(noteType) {
         id: utilService.makeId(),
         isPinned: true,
         info: {
-          txt:`new text note!`
+          title:`new text note!`
         },
         backgroundColor: '#FFFFFF',
     }
@@ -147,10 +147,10 @@ function _createNotes() {
       info: {
         title: 'Todo 1st list ',
         todos: [
-          { txt: 'Todo A', doneAt: true },
-          { txt: 'Todo B', doneAt: false },
-          { txt: 'Todo C', doneAt: true },
-          { txt: 'Todo D', doneAt: true },
+          { txt: 'Todo A', done: true },
+          { txt: 'Todo B', done: false },
+          { txt: 'Todo C', done: true },
+          { txt: 'Todo D', done: false },
         ],
       },
     backgroundColor: '#EEFF1D',
@@ -160,7 +160,7 @@ function _createNotes() {
       id: utilService.makeId(),
       isPinned: true,
       info: {
-        txt:`ABABABABABA`
+        title:`ABABABABABA`
       },
       backgroundColor: '#FFFFFF',
     },
@@ -181,10 +181,10 @@ function _createNotes() {
       info: {
         title: 'Todo 2nd list ',
         todos: [
-          { txt: 'Todod A', doneAt: true },
-          { txt: 'Todod B', doneAt: true },
-          { txt: 'Todod C', doneAt: true },
-          { txt: 'Todod D', doneAt: true },
+          { txt: 'Todod A', done: false },
+          { txt: 'Todod B', done: true },
+          { txt: 'Todod C', done: true },
+          { txt: 'Todod D', done: false },
         ],
       },
     backgroundColor: '#65DB2E',

@@ -14,7 +14,7 @@ export default {
   },
   template: `
   <section class="note-preview flex column justify-center" :style="noteColor" v-if="isNotePinned" >
-    <container v-if="!editMode" :is="note.type" :info="note.info" />
+    <component v-if="!editMode" :is="note.type" :info="note.info" />
     <form class="edit-mode" v-else  >
       <label v-if="urlToedit">Edit source 
         <input type="text" placeholder="Add URL" v-model="editUrlVal" @keyup.enter.prevent="setUrlEdit">

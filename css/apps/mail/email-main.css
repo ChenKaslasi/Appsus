@@ -4,4 +4,5 @@
 @import 'cmps/mail-list.cmp.css';
 @import 'cmps/mail-preview.cmp.css';
 @import 'cmps/mail-details.cmp.css';
-@import 'cmps/mail-nav.cmp.css';
+@import 'cmps/mail-side-bar.cmp.css';
+@import 'cmps/mail-filter.cmp.css';

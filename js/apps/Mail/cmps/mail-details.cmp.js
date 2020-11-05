@@ -1,4 +1,5 @@
 import { mailService } from '../services/mail-service.js';
+import mailNav from './mail-side-bar.cmp.js';
 
 export default {
   template: `
@@ -45,5 +46,8 @@ export default {
         .then(() => console.log('success'))
         .then(this.$router.push('/mail'))
     }
+  },
+  components: {
+    mailNav
   }
 }

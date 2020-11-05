@@ -1,8 +1,8 @@
 
 export default {
-    name: 'mail-nav',
+    name: 'side-bar',
     template: `
-<section class="mail-nav">
+<section class="side-bar">
     <button class="btn"><span><i class="fa fa-plus icon"></i></span>Compose</button>
     <ul>
         <li><i class="icon fas fa-inbox"></i>Inbox</li>

@@ -9,7 +9,7 @@
     position: relative;
 }
 
-.mail-preview .mail-sender, .mail-preview .mail-body{
+.mail-preview .mail-sender, .mail-preview .mail-subject, .mail-preview .mail-sent-at{
     font-family: roboto-bold;
     font-weight: 700;
 }

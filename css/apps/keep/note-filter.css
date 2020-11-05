@@ -1,0 +1,28 @@
+.node-filter {
+  margin-bottom: 2rem;
+  width: fit-content;
+  background-color: #fff;
+  padding-inline-start: 0.5rem;
+  height: 40px;
+}
+
+
+.node-filter label {
+  margin-inline-end: 0.5rem;
+}
+
+.node-filter label input {
+  padding-inline-start: 0.5rem;
+  font-size: 1.2rem;
+  outline: none;
+  border: none;
+}
+
+.node-filter label input:focus {
+  border: none;
+}
+
+.node-filter select {
+  outline: 0;
+  border: 0;
+}

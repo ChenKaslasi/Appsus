@@ -14,7 +14,7 @@
     font-weight: 700;
 }
 
-.mail-preview.read > *{
+.mail-preview.read > * ,.mail-preview.read .mail-subject{
     font-family: roboto;
     font-weight: 400;
 }
@@ -30,6 +30,10 @@
 /*.mail-preview .mail-sent-at {
     flex-grow: 1;
 } */
+
+.mail-preview .icon.fa-star {
+    margin-inline-end: 1em;
+}
 
 .buttons-container {
     position: absolute;

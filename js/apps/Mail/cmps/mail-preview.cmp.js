@@ -5,6 +5,7 @@ export default {
     props: ['mail'],
     template: `
     <section class="mail-preview" :class="isRead"  @mouseover="toggleShouldShowButtons" @mouseout="toggleShouldShowButtons">
+         <div><i class="icon far fa-star"></i></div>
         <div class="mail-sender">{{mail.sender}}</div>
         <div class="mail-body"><span class="mail-subject">{{mail.subject}}</span> - {{mail.body}}</div>
         <div class="mail-sent-at">{{sentAt}}</div>
@@ -43,7 +44,7 @@ export default {
         },
         deleteMail() {
             mailService.removeMail(this.mail.id)
-               .then(() => console.log('success'))
+                .then(() => console.log('success'))
         }
     }
 }

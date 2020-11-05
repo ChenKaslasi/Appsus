@@ -23,27 +23,34 @@ const myRoutes = [
         path: '/mail',
         component: mailApp,
         children: [
+            // {
+            //     path: 'inbox',
+            //     component: mailList
+            // },
+            // {
+            //     path: 'starred',
+            //     component: mailList
+            // },
+            // {
+            //     path: 'sent',
+            //     component: mailList
+            // },
+            // {
+            //     path: 'drafts',
+            //     component: mailList
+            // },
+            // {
+            //     path: ':mailId',
+            //     component: mailDetails
+            // },
             {
-                path: 'inbox',
+                path: ':folder',
                 component: mailList
             },
             {
-                path: 'starred',
-                component: mailList
-            },
-            {
-                path: 'sent',
-                component: mailList
-            },
-            {
-                path: 'drafts',
-                component: mailList
-            },
-            {
-                path: ':mailId',
+                path: ':folder/:mailId',
                 component: mailDetails
-            },
-            
+            }
         ]
     },
     {

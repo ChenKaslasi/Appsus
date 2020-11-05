@@ -29,7 +29,7 @@ export default {
     mailsToShow() {
       if (!this.filterBy) return this.mails;
       const txt = this.filterBy.byText.toLowerCase();
-      return this.mails.filter(mail => mail.subject.toLowerCase().includes(txt) || mail.body.toLowerCase().includes(txt));
+      return this.mails.filter(mail => mail.subject.toLowerCase().includes(txt) || mail.body.toLowerCase().includes(txt) || mail.sender.toLowerCase().includes(txt));
     }
   },
   methods: {

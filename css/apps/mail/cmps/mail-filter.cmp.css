@@ -1,7 +1,28 @@
 .mail-filter {
     margin-bottom: 2em;
+    max-width: 1200px;
+    margin: 0 auto 2em;
 }
 
-.mail-filter input{
-    margin-bottom: 2em;
+.mail-filter .filter-container {
+    max-width: 600px;
+    display: flex;
+    align-items: center;
+    padding-inline-start: 1em;
+    border: 1px solid #ccc;
+    border-radius: 0.75em;
+    margin: 0 auto
 }
+
+.mail-filter .search-input {
+    padding: 1em 1.25em;
+    border: none;
+    outline: none;
+    border-radius: 0.75em;
+    flex-grow: 1;
+}
+
+.mail-filter .icon {
+    margin-inline-end: 0.5em;
+}
+

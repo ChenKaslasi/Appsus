@@ -1,0 +1,28 @@
+.mail-details {
+    font-family: roboto;
+    font-size: 0.875rem;
+    line-height: 1.428em;
+    color: #202124;
+    max-width: 1200px;
+    margin: 0 auto;
+    border: 1px solid rgb(214, 214, 214);
+}
+
+.details-nav {
+    display: flex;
+    align-items: center;
+    padding: 0.75em;
+    border-bottom: 1px solid rgb(214, 214, 214);
+}
+
+.details-nav :first-child {
+margin-inline-end: 1em;
+}
+
+.details-nav .icon {
+    font-size: 1.5em !important;
+}
+
+.details-nav .btn {
+    background-color: #fff;
+}

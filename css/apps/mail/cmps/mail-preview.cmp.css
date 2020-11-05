@@ -33,3 +33,11 @@
     position: absolute;
     right: 0.75em;
 }
+
+.buttons-container .btn{
+    background-color: #fff;
+}
+
+.buttons-container .icon {
+    font-size: 1.5em !important;
+}

@@ -9,8 +9,8 @@ export default {
         <div class="body">{{mail.subject}} - {{mail.body}}</div>
         <div class="sent-at">{{sentAt}}</div>
         <div v-show="shouldShowButtons" class="buttons-container">
-            <button class="btn" @click.stop="deleteMail()"><i class="fas fa-trash trash"></i></button>
-            <button class="btn" @click.stop="toggleRead()"><i class="fa" :class="isOpen"></i></button>
+            <button class="btn" @click.stop="deleteMail()"><i class="icon fas fa-trash trash"></i></button>
+            <button class="btn" @click.stop="toggleRead()"><i class="icon fa" :class="isOpen"></i></button>
         </div>
     </section>
     `,

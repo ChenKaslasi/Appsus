@@ -4,21 +4,28 @@ export default {
   template: `
     <!-- <div><i class="fas fa-user"></i></div> -->
   <section class="mail-details">
-    <div>
-      <i class="fas fa-arrow-left"></i>
-      <i class="fas fa-trash trash"></i>
+    <div class="details-nav">
+      <router-link to="/mail" class="btn"><i class="icon fa fa-arrow-left"></i></router-link>
+      <button class="btn" @click="deleteMail()"><i class="icon fas fa-trash"></i></button>
     </div>
     <div v-if="mail">{{mail}}</div>
   </section>
   `,
   data() {
     return {
-      mail : null
+      mail: null
     }
   },
   created() {
     const id = this.$route.params.mailId;
     mailService.getMailById(id)
       .then(mail => this.mail = mail)
+  },
+  methods: {
+    deleteMail() {
+      mailService.removeMail(this.mail.id)
+        .then(() => console.log('success'))
+        .then(this.$router.push('/mail'))
+    }
   }
 }

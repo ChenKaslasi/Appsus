@@ -1,4 +1,4 @@
-.node-filter {
+.note-filter {
   margin-bottom: 2rem;
   width: fit-content;
   background-color: #fff;
@@ -7,22 +7,22 @@
 }
 
 
-.node-filter label {
+.note-filter label {
   margin-inline-end: 0.5rem;
 }
 
-.node-filter label input {
+.note-filter label input {
   padding-inline-start: 0.5rem;
   font-size: 1.2rem;
   outline: none;
   border: none;
 }
 
-.node-filter label input:focus {
+.note-filter label input:focus {
   border: none;
 }
 
-.node-filter select {
+.note-filter select {
   outline: 0;
   border: 0;
 }

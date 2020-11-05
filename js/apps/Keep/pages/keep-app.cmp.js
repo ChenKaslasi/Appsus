@@ -29,12 +29,11 @@ export default {
   methods: {
     setFilter(filterBy) {
       this.filterBy = filterBy
-      this.notesToShow
     },
   },
   computed: {
     notesToShow() {
-      if(!this.filterBy || this.filterBy.noteType === 'all') return this.notes;
+      if(!this.filterBy || this.filterBy.noteType === 'all' && this.filterBy.value === '') return this.notes;
       var {value,noteType} = this.filterBy;
       if(value.length === 0) {
         return this.notes.filter(note => {
@@ -43,7 +42,11 @@ export default {
       } else {
         value = value.toLowerCase();
         return this.notes.filter(note => {
-          return note.type === noteType && note.info.title.toLowerCase().includes(value)
+          if(this.filterBy.noteType === 'all') {
+            return note.info.title.toLowerCase().includes(value)
+          } else {
+            return note.type === noteType && note.info.title.toLowerCase().includes(value)
+          }
         })
       }
     },

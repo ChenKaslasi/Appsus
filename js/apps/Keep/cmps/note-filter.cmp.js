@@ -1,9 +1,9 @@
 export default {
   template: `
-  <section class="node-filter flex align-center">
+  <section class="note-filter flex align-center">
     <form >
     <i class="fas fa-search"></i><label>
-      <input type="text" placeholder="Search notes" v-model="filterBy.value" @keydown.enter.prevent="emitFilter"></label>
+      <input type="text" placeholder="Search notes" v-model="filterBy.value" @input="emitFilter"></label>
     <select @change="emitFilter" v-model="filterBy.noteType">
       <option value="all">All</option>
       <option value="noteText">Text</option>
@@ -12,7 +12,6 @@ export default {
       <option value="noteVideo">Video</option>
     </select>
     </form>
-    <!-- <pre>{{filterBy}}</pre> -->
   </section>
   `,
   data() {

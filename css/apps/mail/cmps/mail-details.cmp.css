@@ -8,21 +8,62 @@
     border: 1px solid rgb(214, 214, 214);
 }
 
-.details-nav {
+.mail-details .btn-nav {
     display: flex;
     align-items: center;
-    padding: 0.75em;
+    padding:  0.75em 1.5em;
     border-bottom: 1px solid rgb(214, 214, 214);
 }
 
-.details-nav :first-child {
-margin-inline-end: 1em;
+/* .mail-details .btn-container {
+    display: flex;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 00.75em;
+} */
+
+.mail-details h2 {
+    margin-bottom: 1em;
 }
 
-.details-nav .icon {
-    font-size: 1.5em !important;
+.mail-details span.mailSender {
+    font-weight: 700;
+    margin-inline-end: 0.75em;
 }
 
-.details-nav .btn {
+.mail-details span.Mailemail {
+    font-size: 0.75rem;
+    color: #555555;
+}
+
+.btn-nav :first-child {
+    margin-inline-end: 1em;
+}
+
+.btn-nav .icon {
+    font-size: 1em !important;
+}
+
+.btn-nav .btn {
     background-color: #fff;
+}
+
+.mail-details .mail-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4em;
+}
+
+.mail-options .icon {
+    font-size: 1em !important;
+}
+
+.mail-options .btn {
+    background-color: #fff;
+}
+
+.mail-details .main-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0.75em;
 }

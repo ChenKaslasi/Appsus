@@ -6,11 +6,20 @@ export const mailService = {
     getMails,
     saveMailsToStorage,
     removeMail,
-    getMailById
+    getMailById,
+    getNumOfUnread
+}
+
+function getNumOfUnread() {
+    const num = gMails.reduce((counter, mail) => {
+        if (!mail.isRead) counter++;
+        return counter;
+    }, 0);
+    return Promise.resolve(num);
 }
 
 function getMailById(id) {
-    const mail =  gMails.find(currMail => currMail.id === id)
+    const mail = gMails.find(currMail => currMail.id === id)
     return Promise.resolve(mail)
 }
 
@@ -34,7 +43,8 @@ function loadMails() {
     if (!mails || !mails.length) {
         mails = [
             {
-                sender: 'Ron',
+                sender: 'eBay',
+                email: 'ebay@reply5.ebay.com',
                 subject: 'New subscribe',
                 body: 'Welcome back thx',
                 isRead: false,
@@ -43,6 +53,7 @@ function loadMails() {
             },
             {
                 sender: 'Mike',
+                email: 'mike@gmail.com',
                 subject: 'Wassap?',
                 body: 'Pick up!',
                 isRead: true,

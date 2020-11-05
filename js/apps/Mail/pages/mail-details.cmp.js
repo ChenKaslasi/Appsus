@@ -2,13 +2,26 @@ import { mailService } from '../services/mail-service.js';
 
 export default {
   template: `
-    <!-- <div><i class="fas fa-user"></i></div> -->
   <section class="mail-details">
-    <div class="details-nav">
+    <nav class="btn-nav">
       <router-link to="/mail" class="btn"><i class="icon fa fa-arrow-left"></i></router-link>
-      <button class="btn" @click="deleteMail()"><i class="icon fas fa-trash"></i></button>
-    </div>
-    <div>{{mail}}</div>
+      <button class="btn trash" @click="deleteMail()"><i class="icon fas fa-trash"></i></button>
+    </nav>
+    <main v-if="mail" class="main-content">
+      <h2>{{mail.subject}}</h2>
+      <header class="mail-header">
+        <div class="senderDetails">
+          <span class="mailSender">{{mail.sender}}</span>
+          <span class="Mailemail">{{senderEmail}}</span>
+        </div>
+        <div class="mail-options">
+          <button class="btn"><i class="icon fas fa-reply"></i></button>
+        </div>
+      </header>
+      <div class="mail-body">
+        {{mail.body}}
+      </div>
+    </main>
   </section>
   `,
   data() {
@@ -20,6 +33,11 @@ export default {
     const id = this.$route.params.mailId;
     mailService.getMailById(id)
       .then(mail => this.mail = mail)
+  },
+  computed: {
+    senderEmail() {
+      return `<${this.mail.email}>`;
+    }
   },
   methods: {
     deleteMail() {

@@ -1,0 +1,32 @@
+.mail-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mail-nav>* {
+    margin-inline-start: 0.75em;
+}
+
+.mail-nav>* :not(:last-child) {
+    margin-bottom: 1em;
+}
+
+.mail-nav .btn{
+    margin-bottom: 2em;
+}
+
+.mail-nav .icon {
+    font-size: 1em !important;
+    margin-inline-end: 0.5em;
+}
+
+.mail-nav .btn {
+    font-weight: 500;
+    line-height: 2.2857;
+    color: #3c4043;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 1.5em;
+    padding: 0 0.5em;
+    background-color: #fff;
+}

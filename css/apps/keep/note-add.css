@@ -1,0 +1,55 @@
+
+.node-add {
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  width: fit-content;
+  margin: 0 auto; 
+}
+
+.node-add input {
+  padding-inline-start: 0.5rem;
+ border: none;
+ font-size: 1.2rem;
+ min-width: 420px;
+ min-height: 50px;
+}
+
+.node-add input:focus {
+  outline: none;
+  border: none;
+}
+
+.add-container {
+  transition: box-shadow .3s;
+  flex-wrap: wrap;
+}
+
+.add-container:hover{
+  box-shadow: 0 0 11px rgba(32, 32, 32, 0.2); 
+}
+
+
+.add-container i{
+  font-size: 20px !important;
+  margin-inline-end: 0.75rem;
+  padding: 0.5rem;
+  opacity: 0.6;
+}
+
+.add-container i:hover{
+  cursor: pointer;
+  background-color: #dddd;
+  border-radius: 10px;
+  transition: 0.5s;
+  opacity: 1;
+}
+
+.add-container i:focus{
+  opacity: 1;
+  background-color: red;
+}
+
+
+.focused1 , .focused2, .focused3, .focused4{
+  color: #202524;
+}

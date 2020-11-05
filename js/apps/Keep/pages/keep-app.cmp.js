@@ -14,7 +14,7 @@ export default {
   template: `
   <section class="keep-app">
   <note-filter />
-  <note-add />
+  <note-add class="flex justify-center justify-center align-center"/>
   <note-list :notes="notes" pinned="true"/> 
   <note-list :notes="notes" pinned="false"/> 
   </section>

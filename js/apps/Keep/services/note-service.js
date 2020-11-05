@@ -8,11 +8,12 @@ const gNotes = _createNotes();
 
 export const noteService = {
   getNotes,
-  getNoteById,
   addNote,
   deleteNote,
   copyNote,
   updateNote,
+  changeColor,
+  changeNoteUrl
 };
 
 
@@ -21,9 +22,6 @@ function getNotes() {
 };
 
 
-function getNoteById(noteId) {
-  const note = gNotes.find( note => note.id === noteId)
-};
 
 function addNote(note) {
   if(note.type === 'noteImg' || note.type === 'noteVideo') {
@@ -34,7 +32,7 @@ function addNote(note) {
   utilService.storeToStorage(NOTES_KEY,gNotes)
 };
 
-function deleteNote() {
+function deleteNote(noteId) {
   let idx = gNotes.findIndex(note => note.id === noteId)
   gNotes.splice(idx, 1);
   utilService.storeToStorage(NOTES_KEY, gNotes)
@@ -51,6 +49,20 @@ function copyNote(note) {
   utilService.storeToStorage(NOTES_KEY,gNotes)
 };
 
+function changeColor(color,noteId) {
+  _getNoteById(noteId).then(note => note.backgroundColor = color)
+}
+
+function changeNoteUrl(url,noteId) {
+  _getNoteById(noteId).then(note => note.info.url = url)
+}
+
+
+function _getNoteById(noteId) {
+  const note = gNotes.find( note => note.id === noteId)
+  return Promise.resolve(note)
+};
+
 
 function _createNotes() {
   const notes = utilService.loadFromStorage(NOTES_KEY)
@@ -59,32 +71,12 @@ function _createNotes() {
     {
       type: 'noteImg',
       id: utilService.makeId(),
-      isPinned: false,
+      isPinned: true,
       info: {
         url: 'https://media.giphy.com/media/LmNwrBhejkK9EFP504/giphy.gif',
-        title: 'Delivery 3 - FINAL SATURDAY 2100',
+        title: 'Delivery 1 - WEDNESDAY 2100',
       },  
-      backgroundColor: '00d',
-    },
-    {
-      type: 'noteImg',
-      id: utilService.makeId(),
-      isPinned: true,
-      info: {
-        url: 'https://media.giphy.com/media/dTzxp1oRJSuze/giphy.gif',
-        title: 'Bike',
-      },  
-      backgroundColor: '00d',
-    },
-    {
-      type: 'noteVideo',
-      id: utilService.makeId(),
-      isPinned: true,
-      info: {
-        url: 'https://www.youtube.com/watch?v=PIU80XHVsus&ab_channel=MusicLab',
-        title: 'ABABABA'
-      },  
-      backgroundColor: '00d',
+      backgroundColor: '#EEFF1D',
     },
     {
       type: 'noteTodos',
@@ -99,12 +91,31 @@ function _createNotes() {
           { txt: 'Todo D', doneAt: true },
         ],
       },
-    backgroundColor: '00d',
-  },
+    backgroundColor: '#EEFF1D',
+    },
+    {
+      type: 'noteText',
+      id: utilService.makeId(),
+      isPinned: true,
+      info: {
+        txt:`ABABABABABA`
+      },
+      backgroundColor: 'F4D736',
+    },
+    {
+      type: 'noteImg',
+      id: utilService.makeId(),
+      isPinned: true,
+      info: {
+        url: 'https://media.giphy.com/media/5Zesu5VPNGJlm/giphy.gif',
+        title: 'Delivery 2 - THURSDAY 2100',
+      },  
+      backgroundColor: '#65DB2E',
+    },
     {
       type: 'noteTodos',
       id: utilService.makeId(),
-      isPinned: true,
+      isPinned: false,
       info: {
         title: 'Todo 2nd list ',
         todos: [
@@ -114,17 +125,28 @@ function _createNotes() {
           { txt: 'Todod D', doneAt: true },
         ],
       },
-    backgroundColor: '00d',
+    backgroundColor: '#65DB2E',
   },
-    {
-      type: 'noteText',
-      id: utilService.makeId(),
-      isPinned: true,
-      info: {
-        txt:`ABABABABABA`
-      },
-      backgroundColor: '00d',
-    },
+  {
+    type: 'noteVideo',
+    id: utilService.makeId(),
+    isPinned: false,
+    info: {
+      url: 'https://www.youtube.com/watch?v=PIU80XHVsus&ab_channel=MusicLab',
+      title: 'ABABABA'
+    },  
+    backgroundColor: 'F4D736',
+  },
+  {
+    type: 'noteImg',
+    id: utilService.makeId(),
+    isPinned: false,
+    info: {
+      url: 'https://media.giphy.com/media/Oj5w7lOaR5ieNpuBhn/giphy.gif',
+      title: 'Delivery 3 - FINAL SATURDAY 2100',
+    },  
+    backgroundColor: '#65DB2E',
+  },
   ]
   utilService.storeToStorage(NOTES_KEY, defaultNotes);
   return defaultNotes;

@@ -11,7 +11,6 @@ export const noteService = {
   addNote,
   deleteNote,
   copyNote,
-  updateNote,
   changeColor,
   changeNoteUrl,
   changeNoteTxt
@@ -41,10 +40,6 @@ function deleteNote(noteId) {
   let idx = gNotes.findIndex(note => note.id === noteId)
   gNotes.splice(idx, 1);
   utilService.storeToStorage(NOTES_KEY, gNotes)
-};
-
-function updateNote() {
-  // ----------------------------------------------------------- ToDo
 };
 
 function copyNote(note) {

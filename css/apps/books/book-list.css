@@ -1,0 +1,60 @@
+
+.book-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.book-list .header {
+  font-size: 3rem;
+  font-weight: 500;
+}
+
+.book-list ul{
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  justify-content: center;
+}
+
+.book-list ul li{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-inline-end: 2rem;  
+  padding: 0.5rem;
+  margin: 1rem;
+  cursor: pointer;
+  opacity: 0.8;
+  max-width: 300px;
+  
+}
+
+.book-list ul li:hover{
+  transition: 0.3s;
+  opacity: 1;
+}
+
+.book-list ul li img{
+  max-width: 200px;
+}
+
+.book-list ul .more-info-btn{
+  width: 100%;
+  margin: 1rem;
+  color: crimson;
+  border: 2px solid crimson;
+  border-radius: 10px;
+  background-color: #ffff;
+  cursor: pointer;
+}
+
+.book-list ul .more-info-btn:hover{
+  border: 2px solid crimson;
+  color: #ffff; 
+  background-color: crimson;
+  transition: 0.5s;
+}
+

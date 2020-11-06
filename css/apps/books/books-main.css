@@ -1,0 +1,28 @@
+@import 'book-details.css';
+@import 'book-filter.css';
+@import 'book-list.css';
+@import 'book-preview.css';
+@import 'book-add-review.css';
+@import 'book-show-reviews.css';
+
+
+
+.book-selected .back-btn {
+  position: absolute;
+  padding: 0.5rem;
+  font-size: 1.5rem ;
+  font-weight: bold;
+  top: 60px;
+  right: 20px;
+  border: none;
+  background-color: inherit;
+  cursor: pointer;
+  letter-spacing: 0.1rem;
+}
+
+.book-selected .back-btn:hover {
+  transition: 0.6s;
+  border-radius: 10px;
+  color: #eee;
+  background-color: black;
+}

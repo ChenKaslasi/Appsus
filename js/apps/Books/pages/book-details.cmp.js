@@ -13,24 +13,30 @@ export default {
   },
   template: `
   <section class="book-details" v-if="book">
-    <div class="book-image">
-      <img :src="book.thumbnail">
+    <div class="book-container">
+      <div class="book-image">
+        <img :src="book.thumbnail">
+      </div>
+      <div class="book-data">
+        <ul class="book-props">
+          <li class="book-title">{{book.title}}</li>
+          <li class="title-details">authors: {{authors}}</li>
+          <li class="title-details">catagories:{{catagories}}</li>
+          <li class="title-details">language: {{book.language}}</li>
+          <li :class="evaluatePrice">{{getPrice}}{{getCurrency}}</li>
+        </ul>
+        <book-description :description="book.description"/>
+        <ul class="book-computed">
+            <li class="book-length">{{evaluateBookLength}}</li>
+            <li class="book-seniority">{{evaluateBookSeniority}}</li>
+            <li class="book-onsale" v-if="isOnSale">On sale!!</li>
+        </ul>
+      </div>
     </div>
-    <div class="book-data">
-      <h1 class="book-title">{{book.title}}</h1>
-      <h4><span class="title-details">authors:</span>{{authors}}</h4>
-      <h4><span class="title-details">catagories:</span>{{catagories}}</h4>
-      <h4><span class="title-details">language:</span>{{book.language}}</h4>
-      <book-description :description="book.description"/>
-      <h3 class="book-price" :class="evaluatePrice">Price: {{getPrice}}<span>{{getCurrency}}</span></h3>
-      <ul >
-        <li class="book-length">{{evaluateBookLength}}</li>
-        <li class="book-seniority">{{evaluateBookSeniority}}</li>
-        <li class="book-onsale" v-if="isOnSale">On sale!!</li>
-      </ul>
+    <div class="reviews-container flex">
+      <book-add-review :book="book" class="book-review" @reviewAdd="reviewAdded"/>
+      <book-show-reviews :reviews="book.reviews"/>
     </div>
-    <book-add-review :book="book" class="book-review" @reviewAdd="reviewAdded"/>
-    <book-show-reviews :reviews="book.reviews"/>
   </section>
   `,
   data() {

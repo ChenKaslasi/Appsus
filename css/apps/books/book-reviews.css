@@ -1,0 +1,77 @@
+/* layout */
+
+.add-review {
+  /* background-color: yellow; */
+  padding: 1rem;
+  flex: 1;
+  
+}
+
+.show-reviews {
+  background-color: red;
+  padding: 1rem;
+  flex: 2;
+}
+
+
+/* Add-review component */
+
+.add-review p {
+  margin: 0.5rem;
+  font-weight: bold;
+}
+
+.add-review :not(p) {
+  width: 100%;
+  min-height: 2rem;
+}
+
+.add-review textarea {
+  min-height: 150px;
+}
+.add-review .submit-btn {
+  display: block;
+  border-radius: 4px;
+  background-color: #4CAF50;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 10px;
+  width: 100%;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.add-review .submit-btn span{
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.add-review .submit-btn span::after{
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.add-review .submit-btn:hover span{
+  padding-right: 25px;
+}
+
+.add-review .submit-btn:hover span:after{
+  opacity: 1;
+  right: 0;
+}
+
+
+.show-reviews li{
+  list-style: none;
+  margin-bottom: 0.5rem;
+}
+
+

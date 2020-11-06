@@ -3,15 +3,14 @@ import {booksService} from '../services/book-service.js';
 export default {
   props: ['book'],
   template: `
-  <section class="book-review">
-    <button @click="toggleReviewAdd">Add review</button>
-    <form v-if="onReviewAdd">
+  <section class="add-review">
+    <form class="flex column">
       <label class="name">
-        <span>Name:</span>
+        <p>Name:</p>
         <input type="text" placeholder="Add name" v-model="review.name">
       </label>
       <label class="rate" >
-      <span>Rating:</span>
+      <p>Rating:</p>
        <select v-model="review.rate" >
          <option value="1">1</option>
          <option value="2">2</option>
@@ -21,13 +20,13 @@ export default {
        </select>
       </label>
       <label class="date">
-        <span>Date</span>
+        <p>Date</p>
         <input type="Date">
       </label>
       <label class="text">
-        <span>Your review:</span>
-        <textarea v-model="review.txt" cols="100" rows="10"></textarea>
-        <button @click.prevent="saveReview">Submit</button>
+        <p>Your review:</p>
+        <textarea v-model="review.txt"></textarea>
+        <button class="submit-btn" @click.prevent="saveReview"><span>Submit</span></button>
       </label>
     </form>
   </section>
@@ -41,12 +40,8 @@ export default {
     }
   },
   methods: {
-    toggleReviewAdd() {
-      this.onReviewAdd = !this.onReviewAdd
-    },
     saveReview() {
       booksService.addReview(this.book.id, this.review);
-      this.toggleReviewAdd()
       this.$emit('reviewAdd',this.review)
       this.review = this.emptyReview;
     },

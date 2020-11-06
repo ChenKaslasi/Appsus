@@ -12,7 +12,7 @@ export default {
     bookShowReviews,
   },
   template: `
-  <section class="book-details" >
+  <section class="book-details" v-if="book">
     <div class="book-image">
       <img :src="book.thumbnail">
     </div>

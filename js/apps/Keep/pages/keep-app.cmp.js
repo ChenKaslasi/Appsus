@@ -13,9 +13,13 @@ export default {
   },
   template: `
   <section class="keep-app">
-  <note-filter @doFilter="setFilter" />
-  <note-add class="flex justify-center justify-center align-center"/>
+    <div class="flex wrap justify-between">
+      <note-filter @doFilter="setFilter" />
+      <note-add class="flex justify-center justify-center align-center"/>
+    </div>
+  <hr>
   <note-list :notes="notesToShow" pinned="true"/> 
+  <hr>
   <note-list :notes="notesToShow" pinned="false"/> 
   
   </section>

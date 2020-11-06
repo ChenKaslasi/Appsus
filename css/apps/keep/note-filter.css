@@ -3,7 +3,7 @@
   width: fit-content;
   background-color: #fff;
   padding-inline-start: 0.5rem;
-  height: 40px;
+  min-height: 3rem;
 }
 
 

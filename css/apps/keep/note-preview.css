@@ -88,7 +88,7 @@
   border: none;
 }
 
-/* note-todoList */
+/* note-todoList component*/
 
 .todo-list {
   padding-inline-start: 1rem;
@@ -104,4 +104,23 @@
 
 .todo-list label:first-child {
   margin-top: 1rem;
+}
+
+.marked {
+  text-decoration: line-through
+}
+
+.edit {
+  padding-top: 1rem;
+  align-self: center;
+}
+
+.edit input {
+  width: 150px;
+}
+
+/* note-text component */
+
+.note-text {
+  padding-top: 0.5rem;
 }

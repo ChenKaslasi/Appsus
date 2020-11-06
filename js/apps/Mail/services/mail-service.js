@@ -59,6 +59,7 @@ function loadMails() {
                 email: 'mike@gmail.com',
                 subject: 'Wassap?',
                 body: 'Pick up!',
+                inbox:true,
                 isRead: true,
                 starred:true,
                 sent:false,

@@ -31,8 +31,13 @@
     flex-grow: 1;
 } */
 
-.mail-preview .icon.fa-star {
+.mail-preview .icon.fas.fa-star.starred {
+    color: #f3d277;
+}
+
+.mail-preview .starred-btn {
     margin-inline-end: 1em;
+    background-color: inherit;
 }
 
 .buttons-container {
@@ -40,9 +45,9 @@
     right: 0.75em;
 }
 
-.buttons-container .btn {
-    background-color: #fff;
-}
+/* .buttons-container .btn {
+    background-color: inherit;
+} */
 
 .buttons-container .icon {
     font-size: 1.5em !important;

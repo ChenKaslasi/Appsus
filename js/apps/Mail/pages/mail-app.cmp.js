@@ -1,6 +1,7 @@
 import { mailService } from '../services/mail-service.js';
 import sideBar from '../cmps/mail-side-bar.cmp.js';
 import mailFilter from '../cmps/mail-filter.cmp.js';
+import mailCompose from '../cmps/mail-compose.cmp.js';
 
 export default {
   name: 'mail-app',
@@ -8,8 +9,9 @@ export default {
   <section class="mail-app">
     <mail-filter @doFilter="setFilter"></mail-filter>
     <main class="main-container">
-    <side-bar></side-bar>
+    <side-bar @open="openCompose"></side-bar>
     <router-view v-if="mails" :mails="mailsToShow"></router-view>
+    <mail-compose v-if="isCompose" @close="closeCompose"></mail-compose>
     </main>
   </section>
   `,
@@ -17,7 +19,8 @@ export default {
     return {
       mails: null,
       filterBy: null,
-      folder: null
+      folder: null,
+      isCompose: true
     }
   },
   created() {
@@ -48,10 +51,17 @@ export default {
   methods: {
     setFilter(filterBy) {
       this.filterBy = filterBy
+    },
+    closeCompose() {
+      this.isCompose = false;
+    },
+    openCompose() {
+      this.isCompose = true;
     }
   },
   components: {
     sideBar,
     mailFilter,
+    mailCompose
   }
 }

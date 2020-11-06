@@ -3,7 +3,7 @@
   background-color: #FFFFFF;
   border-radius: 10px;
   width: fit-content;
-  margin: 0 auto; 
+  margin-bottom: 2rem;
 }
 
 .node-add input {
@@ -11,7 +11,7 @@
  border: none;
  font-size: 1.2rem;
  min-width: 420px;
- min-height: 50px;
+ min-height: 3rem;
 }
 
 .node-add input:focus {
@@ -33,7 +33,7 @@
   font-size: 20px !important;
   margin-inline-end: 0.75rem;
   padding: 0.5rem;
-  opacity: 0.6;
+  opacity: 0.8;
 }
 
 .add-container i:hover{
@@ -46,10 +46,8 @@
 
 .add-container i:focus{
   opacity: 1;
-  background-color: red;
 }
 
-
-.focused1 , .focused2, .focused3, .focused4{
-  color: #202524;
+.active {
+  color: red;
 }

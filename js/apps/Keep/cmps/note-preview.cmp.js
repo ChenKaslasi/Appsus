@@ -15,11 +15,11 @@ export default {
   template: `
   <section class="note-preview flex column justify-center" :style="noteColor" v-if="isNotePinned" >
     <component v-if="!editMode" :is="note.type" :info="note.info" />
-    <form class="edit-mode" v-else  >
-      <label v-if="urlToedit">Edit source 
+    <form class="edit-mode" v-else  :class="{edit: urlToedit || txtToEdit}">
+      <label v-if="urlToedit" >Edit source 
         <input type="text" placeholder="Add URL" v-model="editUrlVal" @keyup.enter.prevent="setUrlEdit">
       </label>
-      <label v-if="txtToEdit">Edit content 
+      <label v-show="txtToEdit" >Edit title 
         <input type="text" placeholder="Enter text" v-model="editTxtVal" @keyup.enter.prevent="setTxtToEdit">
       </label>
     </form>

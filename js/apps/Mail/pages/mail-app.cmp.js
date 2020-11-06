@@ -11,7 +11,6 @@ export default {
     <side-bar></side-bar>
     <router-view v-if="mails" :mails="mailsToShow"></router-view>
     </main>
-  <pre>{{folder}}</pre>
   </section>
   `,
   data() {
@@ -24,23 +23,23 @@ export default {
   created() {
     mailService.getMails()
       .then(mails => this.mails = mails);
+    this.$router.push('/mail/inbox');
   },
   watch: {
     '$route.params'(to) {
-      console.log(to.folder);
       this.folder = to.folder;
+      this.filterBy = null;
+      if (to.folder === undefined) this.$router.push('/mail/inbox')
     }
   },
   computed: {
     mailsToShow() {
       if (!this.filterBy && !this.folder || this.folder === 'inbox') return this.mails;
       if (this.filterBy) {
-        console.log('txt');
         const txt = this.filterBy.byText.toLowerCase();
         return this.mails.filter(mail => mail.subject.toLowerCase().includes(txt) ||
           mail.body.toLowerCase().includes(txt) || mail.sender.toLowerCase().includes(txt));
       } else {
-        console.log('folder');
         const folder = this.folder;
         return this.mails.filter(mail => mail[folder]);
       }

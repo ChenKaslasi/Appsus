@@ -4,7 +4,7 @@ export default {
   template: `
   <section class="mail-details">
     <nav class="btn-nav">
-      <router-link to="/mail" class="btn"><i class="icon fa fa-arrow-left"></i></router-link>
+      <router-link :to="previousPage" class="btn back"><i class="icon fa fa-arrow-left"></i></router-link>
       <button class="btn trash" @click="deleteMail()"><i class="icon fas fa-trash"></i></button>
     </nav>
     <main v-if="mail" class="main-content">
@@ -37,6 +37,10 @@ export default {
   computed: {
     senderEmail() {
       return `<${this.mail.email}>`;
+    },
+    previousPage() {
+      const fromFolder = this.$route.params.folder;
+      return `/mail/${fromFolder}` ;
     }
   },
   methods: {

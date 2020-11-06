@@ -5,7 +5,7 @@ export default {
     props: ['mail'],
     template: `
     <section class="mail-preview" :class="isRead"  @mouseover="toggleShouldShowButtons" @mouseout="toggleShouldShowButtons">
-         <div><i class="icon far fa-star"></i></div>
+         <button class="btn starred-btn" @click.stop="toggleStarred()"><i class="icon far fa-star"></i></button>
         <div class="mail-sender">{{mail.sender}}</div>
         <div class="mail-body"><span class="mail-subject">{{mail.subject}}</span> - {{mail.body}}</div>
         <div class="mail-sent-at">{{sentAt}}</div>
@@ -17,7 +17,8 @@ export default {
     `,
     data() {
         return {
-            shouldShowButtons: false
+            shouldShowButtons: false,
+            isMarked: false
         }
     },
     computed: {
@@ -37,6 +38,10 @@ export default {
     methods: {
         toggleShouldShowButtons() {
             this.shouldShowButtons = !this.shouldShowButtons;
+        },
+        toggleStarred() {
+            this.mail.starred = !this.mail.starred;
+            mailService.saveMailsToStorage();
         },
         toggleRead() {
             this.mail.isRead = !this.mail.isRead;

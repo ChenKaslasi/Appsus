@@ -22,7 +22,8 @@ export default {
                 mail.isRead = true;
                 mailService.saveMailsToStorage()
             }
-            this.$router.push(`/mail/${mail.id}`);
+            const folder = this.$route.params.folder;
+            this.$router.push(`/mail/${folder}/${mail.id}`);
         }
     }
 }

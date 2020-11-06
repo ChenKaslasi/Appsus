@@ -48,6 +48,9 @@ function loadMails() {
                 subject: 'New subscribe',
                 body: 'Welcome back thx',
                 isRead: false,
+                starred:false,
+                sent:true,
+                draft:false,
                 sentAt: Date.now(),
                 id: utilService.makeId()
             },
@@ -57,6 +60,9 @@ function loadMails() {
                 subject: 'Wassap?',
                 body: 'Pick up!',
                 isRead: true,
+                starred:true,
+                sent:false,
+                draft:false,
                 sentAt: 1551133930594,
                 id: utilService.makeId()
             },

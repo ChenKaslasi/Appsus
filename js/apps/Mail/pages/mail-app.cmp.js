@@ -32,11 +32,6 @@ export default {
     }
   },
   computed: {
-    // mailsToShow() {
-    //   if (!this.folder || this.folder === 'inbox') return this.mails;
-    //   const folder = this.folder;
-    //   return this.mails.filter(mail => mail[folder]);
-    // },
     mailsToShow() {
       if (!this.filterBy && !this.folder || this.folder === 'inbox') return this.mails;
       if (this.filterBy) {
@@ -49,7 +44,7 @@ export default {
         const folder = this.folder;
         return this.mails.filter(mail => mail[folder]);
       }
-    },
+    }
   },
   methods: {
     setFilter(filterBy) {

@@ -1,11 +1,11 @@
 export default {
   props: ['book'],
   template: `
-  <section class="book-preview">
-    <router-link :to="getLink" excect class="router-to-details">
+  <section class="book-preview flex column justify-center align-center">
+    <router-link :to="getLink" excect class="preview-container flex column justify-center align-center">
       <img :src="imgUrl">
-      <h2>{{book.title}}</h2>
-      <h4>Price - {{getPrice}} <span>{{getCurrency}}</span></h4>
+      <h4 class="title">{{book.title}}</h4>
+      <h5 class="price">Price - {{getPrice}}<span>{{getCurrency}}</span></h5>
       <button class="more-info-btn">More details</button>
     </router-link>
   </section>
@@ -15,7 +15,7 @@ export default {
       return this.book.thumbnail
     },
     getLink() {
-      return `/books/${this.book.id}`
+      return `/books/list/${this.book.id}`
     },
     getPrice() {
       return this.book.listPrice.amount

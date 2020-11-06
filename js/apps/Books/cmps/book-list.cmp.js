@@ -12,7 +12,6 @@ export default {
     <ul >
       <li v-for="currBook in books" :key="currBook.id">
         <book-preview :book="currBook"></book-preview>
-        <!-- <button @click.stop="emitRemove(currBook.id)">Remove</button> -->
       </li>
     </ul>
   </section>

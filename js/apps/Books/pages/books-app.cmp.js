@@ -1,5 +1,5 @@
 import {booksService} from '../services/book-service.js';
-import bookList from '../cmps/book-list.cmp.js';
+import bookList from '../cmps/book-list.cmp.js'
 import bookFilter from '../cmps/book-filter.cmp.js';
 import bookDetails from '../pages/book-details.cmp.js';
 
@@ -13,14 +13,10 @@ export default {
   },
   template: `
   <section class="books-app">
-  <div class="books-preview" v-if="!currentBook">
+  <div class="books-preview" >
       <book-filter @doFilter="setFilter"/>
-      <book-list @remove="removeBook" @selectBook="getBookDetails" :books="booksToShow"/>
-    </div>
-
-    <div class="book-selected" v-if="currentBook">
-      <router-view :book="currentBook"/>
-      <button class="back-btn" @click="setPreviewPage">Go back &raquo;</button>
+      <router-view @remove="removeBook" @selectBook="getBookDetails" :books="booksToShow" />
+      
     </div>
   </section>
   `,
@@ -39,9 +35,6 @@ export default {
     getBookDetails(id) {
       booksService.getBookById(id).then(book => this.currentBook = book)
     },
-    setPreviewPage() {
-      this.currentBook = null
-    },
     setFilter(filterBy) {
       this.filterBy = filterBy
     }
@@ -58,6 +51,12 @@ export default {
     },
   },
   created() {
-    booksService.getBooks().then(books => this.books = books)
+    booksService.getBooks().then(books => this.books = books);
+    this.$router.push('/books/list');
+  },
+  watch: {
+    '$route.params'(to){
+      if(to.list === undefined) this.$router.push('/books/list');
+    }
   }
 }

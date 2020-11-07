@@ -10,15 +10,15 @@ export default {
       <section class="features-container flex column justify-center align-center">
           <div @click.stop="setMissBooks" class="app-cards flex wrap justify-center align-center">
             <div class="card flex column justify-center align-center">
-                <img src="../../assets/icon/books.svg">
+                <img src="assets/icon/books.svg">
                 <button class="card-btn">MissBooks <span>&rarr;</span></button>
             </div>
             <div @click.stop="setMisterEmail" class="card card flex column justify-center align-center">
-                <img src="../../assets/icon/email.svg">
+                <img src="assets/icon/email.svg">
                 <button class="card-btn">MisterEmail <span>&rarr;</span></button>
             </div>
             <div @click.stop="setMissKeep" class="card card flex column justify-center align-center">
-                <img src="../../assets/icon/note.svg">
+                <img src="assets/icon/note.svg">
                 <button class="card-btn">MissKeep <span>&rarr;</span></button>
             </div>
           </div>

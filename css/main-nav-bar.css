@@ -3,10 +3,33 @@
   justify-content: space-between;
   align-items: center;
   border-bottom: 1rem;
-  background-color: lightblue;
-  margin-bottom: 2em;
+  background-color: rgb(133, 195, 216);
+}
+
+
+.app-header .logo {
+  font-family: poppins-bold,sans-serif;
+  color: #fff;
+  transition: text-shadow 0.4s;
+}
+
+.app-header .logo:hover {
+  transition: 0.4s;
+  text-shadow: -4px 0px 8px #000000;
+}
+
+.app-header a{
+  padding: 2rem 0;
+  margin: 0 2rem ;
 }
 
 .app-header nav>*{
-margin-inline-end: 0.75rem;
+font-size: 1.3rem;
+color: #fff;
+transition: text-shadow 0.4s;
+}
+
+.app-header nav>*:hover{
+transition: 0.4s;
+text-shadow: -4px 0px 4px #000000;
 }

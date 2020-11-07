@@ -1,24 +1,25 @@
 /* layout */
 
 .add-review {
-  /* background-color: yellow; */
   padding: 1rem;
   flex: 1;
-  
+  min-width: 250px;
 }
 
 .show-reviews {
-  background-color: red;
+  background-color: lightblue;
+  border-radius: 15px;
   padding: 1rem;
   flex: 2;
+  min-width: 500px;
 }
-
 
 /* Add-review component */
 
 .add-review p {
   margin: 0.5rem;
   font-weight: bold;
+  text-transform: capitalize;
 }
 
 .add-review :not(p) {
@@ -27,8 +28,12 @@
 }
 
 .add-review textarea {
-  min-height: 150px;
+  min-height: 200px;
+  padding: 0.5rem;
+  font-size: 1.15rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
 .add-review .submit-btn {
   display: block;
   border-radius: 4px;
@@ -68,10 +73,50 @@
   right: 0;
 }
 
+/* show-review component */
 
 .show-reviews li{
   list-style: none;
   margin-bottom: 0.5rem;
+  border-bottom: solid 2px lightslategray;
 }
 
+.reviews li .details {
+  flex: 1;
+  padding-inline-end: 1rem;
+}
 
+.reviews li .content {
+  flex: 5;
+}
+
+.reviews li .content p {
+  text-transform: capitalize;
+  border-left: 1px solid lightslategray;
+  padding-inline-start: 1rem;
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+.reviews li .details .name {
+margin: 0;
+}
+
+.reviews li .details .name i {
+  font-size: 1.5rem !important;
+  width: fit-content;
+  background-color: #ddd;
+  padding: 0.5rem;
+  border-radius: 50%;
+  margin-inline-end: 0.75rem;
+}
+
+.reviews li .details .stars{
+  font-size: 1.75rem;
+  margin-inline-end: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.reviews li .details .date{
+  font-size: 0.75rem;
+  margin-bottom: 0.5rem;
+}

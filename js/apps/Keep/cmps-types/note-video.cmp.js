@@ -6,7 +6,6 @@ export default {
       <iframe :src="transformVideoUrl"></iframe>
     </div>
     <h4 class="note-title flex align-center"><i class="fa fa-youtube"></i>{{info.title}}</h4>
-    
   </section>
   `,
   data() {

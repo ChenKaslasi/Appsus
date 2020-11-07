@@ -11,21 +11,17 @@ export default {
       </label>
       <label class="rate" >
       <p>Rating:</p>
-       <select v-model="review.rate" >
-         <option value="1">1</option>
-         <option value="2">2</option>
-         <option value="3">3</option>
-         <option value="4">4</option>
-         <option value="5">5</option>
+       <select  v-model="review.rate">
+         <option v-for="idx in 5" :key="idx" :value="idx">{{idx}}</option>
        </select>
       </label>
       <label class="date">
         <p>Date</p>
-        <input type="Date">
+        <input type="Date" v-model="review.readAt">
       </label>
       <label class="text">
         <p>Your review:</p>
-        <textarea v-model="review.txt"></textarea>
+        <textarea v-model="review.txt" placeholder="Write somthing about this book..."></textarea>
         <button class="submit-btn" @click.prevent="saveReview"><span>Submit</span></button>
       </label>
     </form>

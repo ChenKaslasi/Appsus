@@ -1,43 +1,62 @@
-.book-data {
-  text-transform: capitalize;
+.book-container {
+  padding: 1rem;
 }
 
-.book-data .book-title {
+.book-container .book-image {
+ flex: 1;
+}
+
+.book-container .book-image img{
+  max-width: 300px;
+}
+
+.book-container .book-data {
+  text-transform: capitalize;
+  flex: 2;
+  padding-inline-start: 2rem;
+  min-width: 400px;
+}
+
+.book-props .book-title {
   font-size: 3rem;
   text-transform: capitalize;
+  margin-bottom: 1.5rem;
 }
 
-.book-data .book-price {
+.book-props .price {
   margin-top: 2rem;
   font-size: 2rem ;
 }
 
-.book-data ul {
-  list-style: none;
-  margin-top: 2rem;
-}
-
-.book-data ul li {
+.book-computed li {
   display: inline-flex;
-  color: white;
-  padding: 8px;
   font-family: Arial;
+  color: white;
   border-radius: 10px;
   margin-inline-end: 0.5rem;
-  text-transform: uppercase;
+  text-transform: capitalize;
+  padding: 0.5rem;
+  font-size: 1.25rem;
 }
 
 .book-data .book-length {
+  font-weight: bold;
   background-color: #2196F3
 }
 .book-data .book-seniority {
+  font-weight: bold;
   background-color: #ff9800;
 }
 .book-data .book-onsale {
+  font-weight: bold;
   background-color: #4CAF50
 }
 
-.book-description {
-  margin: 1.5rem 0;
-  border-radius: 15px;
+.cheap {
+  color: green;
 }
+
+.pricey {
+ color: crimson;
+}
+

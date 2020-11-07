@@ -13,8 +13,8 @@ export default {
     noteVideo,
   },
   template: `
-  <section class="note-preview flex column justify-center" :style="noteColor" v-if="isNotePinned" >
-    <component v-if="!editMode" :is="note.type" :info="note.info" />
+  <section class="note-preview flex column justify-center" :style="noteColor" v-if="isNotePinned" @mousedown='setMouseDown' :class="{grabing : isMouseDown}">
+    <component v-if="!editMode" :is="note.type" :info="note.info" :noteId="note.id"/>
     <form class="edit-mode" v-else  :class="{edit: urlToedit || txtToEdit}">
       <label v-if="urlToedit" >Edit source 
         <input type="text" placeholder="Add URL" v-model="editUrlVal" @keyup.enter.prevent="setUrlEdit">
@@ -59,7 +59,8 @@ export default {
       editUrlVal: '',
       editTxtVal: '',
       txtToEdit: false,
-      urlToedit: false
+      urlToedit: false,
+      isMouseDown: false
     }
   },
   methods: {
@@ -92,7 +93,11 @@ export default {
     setTxtToEdit() {
       noteService.changeNoteTxt(this.editTxtVal,this.note.id)
       this.toggleEditNote()
-    }
+    },
+    setMouseDown() {
+      this.isMouseDown = true;
+      setTimeout(()=>this.isMouseDown = false, 500)
+    },
   },
   computed: {
     isNotePinned() {

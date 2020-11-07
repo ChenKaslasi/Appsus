@@ -13,8 +13,8 @@ export default {
   },
   template: `
   <section class="book-details" v-if="book">
-    <div class="book-container">
-      <div class="book-image">
+    <div class="book-container flex wrap">
+      <div class="book-image flex justify-center align-center">
         <img :src="book.thumbnail">
       </div>
       <div class="book-data">
@@ -23,7 +23,7 @@ export default {
           <li class="title-details">authors: {{authors}}</li>
           <li class="title-details">catagories:{{catagories}}</li>
           <li class="title-details">language: {{book.language}}</li>
-          <li :class="evaluatePrice">{{getPrice}}{{getCurrency}}</li>
+          <li :class="['price',evaluatePrice]">Price: {{getPrice}} {{getCurrency}}</li>
         </ul>
         <book-description :description="book.description"/>
         <ul class="book-computed">
@@ -33,7 +33,7 @@ export default {
         </ul>
       </div>
     </div>
-    <div class="reviews-container flex">
+    <div class="reviews-container flex wrap">
       <book-add-review :book="book" class="book-review" @reviewAdd="reviewAdded"/>
       <book-show-reviews :reviews="book.reviews"/>
     </div>
@@ -46,7 +46,8 @@ export default {
   },
   methods: {
     reviewAdded(review) {
-      let parsedReview = JSON.parse(JSON.stringify(review)) 
+      let parsedReview = JSON.parse(JSON.stringify(review));
+      console.log(this.book);
       this.book.reviews.push(parsedReview)
       this.reviewSavedSuccess()
     },
@@ -59,13 +60,13 @@ export default {
   computed: {
     evaluateBookLength() {
       let pageCount = this.book.pageCount
-      return (pageCount > 500) ? 'Long reading' : (pageCount > 200) ? 'Decent reading' : 'Light reading' 
+      return (pageCount > 500) ? '# Long reading' : (pageCount > 200) ? '# Decent reading' : '# Light reading' 
     },
     evaluateBookSeniority() {
       let publishDiff = (new Date().getFullYear()) - this.book.publishedDate;
-      if(publishDiff > 10) return 'Veteran Book';
-      if(publishDiff < 1) return 'New!'; 
-      else return 'Lately published'
+      if(publishDiff > 10) return '# Veteran Book';
+      if(publishDiff < 1) return '# New!'; 
+      else return '# Lately published'
     },
     getPrice() {
       return this.book.listPrice.amount

@@ -9,19 +9,22 @@ const gNotes = _createNotes();
 export const noteService = {
   getNotes,
   addNote,
+  addNoteTodo,
+  removeNoteTodo,
+  editNoteTodo,
   deleteNote,
   copyNote,
+  markNoteDone,
   changeColor,
   changeNoteUrl,
-  changeNoteTxt
+  changeNoteTxt,
+
 };
 
 
 function getNotes() {
   return Promise.resolve(gNotes)
 };
-
-
 
 function addNote(noteType,content) {
   let note = _getEmptyNote(noteType);
@@ -50,21 +53,63 @@ function copyNote(note) {
 };
 
 function changeColor(color,noteId) {
-  _getNoteById(noteId).then(note => note.backgroundColor = color)
+  _getNoteById(noteId).then(note => {
+    note.backgroundColor = color
+    utilService.storeToStorage(NOTES_KEY,gNotes)
+  })
 }
 
 function changeNoteUrl(url,noteId) {
-  _getNoteById(noteId).then(note => note.info.url = url)
+  _getNoteById(noteId).then(note => {
+    note.info.url = url
+    utilService.storeToStorage(NOTES_KEY,gNotes)
+  })
 }
 
 function changeNoteTxt(txt,noteId) {
-  _getNoteById(noteId).then(note => note.info.title = txt)
+  _getNoteById(noteId).then(note => {
+    note.info.title = txt
+    utilService.storeToStorage(NOTES_KEY,gNotes)
+  })
+}
+
+function addNoteTodo(noteId,todo) {
+  _getNoteById(noteId).then(note => {
+    note.info.todos.unshift(todo);
+    utilService.storeToStorage(NOTES_KEY,gNotes)
+  })
+}
+
+function removeNoteTodo(noteId,todoId) {
+  _getNoteById(noteId).then(note => {
+    const idx = note.info.todos.findIndex( todo => todo.id === todoId)
+    note.info.todos.splice(idx, 1);
+    utilService.storeToStorage(NOTES_KEY,gNotes)
+  })
+}
+
+function editNoteTodo(noteId,todoId,content) {
+  _getNoteById(noteId).then(note => {
+    const todo = note.info.todos.find( todo => todo.id === todoId)
+    todo.txt = content
+    utilService.storeToStorage(NOTES_KEY,gNotes)
+  })
+}
+
+
+function markNoteDone(noteId,todoId) {
+  _getNoteById(noteId).then(note => {
+    const todo = note.info.todos.find( todo => todo.id === todoId)
+    todo.done = !todo.done
+    utilService.storeToStorage(NOTES_KEY,gNotes)
+  })
 }
 
 function _getNoteById(noteId) {
   const note = gNotes.find( note => note.id === noteId)
   return Promise.resolve(note)
-};
+}
+
 
 
 function _getEmptyNote(noteType) {
@@ -88,10 +133,10 @@ function _getEmptyNote(noteType) {
       info: {
         title: 'new Todo list ',
         todos: [
-          { txt: 'Todo A', done: true },
-          { txt: 'Todo B', done: false },
-          { txt: 'Todo C', done: true },
-          { txt: 'Todo D', done: true },
+          {id:utilService.makeId(), txt: 'Todo A', done: false },
+          {id:utilService.makeId(), txt: 'Todo B', done: false },
+          {id:utilService.makeId(), txt: 'Todo C', done: false },
+          {id:utilService.makeId(), txt: 'Todo D', done: false },
         ],
       },
     backgroundColor: '#EEFF1D',
@@ -142,10 +187,10 @@ function _createNotes() {
       info: {
         title: 'Todo 1st list ',
         todos: [
-          { txt: 'Todo A', done: true },
-          { txt: 'Todo B', done: false },
-          { txt: 'Todo C', done: true },
-          { txt: 'Todo D', done: false },
+          {id:utilService.makeId(), txt: 'Todo A', done: false },
+          {id:utilService.makeId(), txt: 'Todo B', done: false },
+          {id:utilService.makeId(), txt: 'Todo C', done: false },
+          {id:utilService.makeId(), txt: 'Todo D', done: false },
         ],
       },
     backgroundColor: '#EEFF1D',
@@ -176,10 +221,10 @@ function _createNotes() {
       info: {
         title: 'Todo 2nd list ',
         todos: [
-          { txt: 'Todod A', done: false },
-          { txt: 'Todod B', done: true },
-          { txt: 'Todod C', done: true },
-          { txt: 'Todod D', done: false },
+          {id:utilService.makeId(), txt: 'Todod A', done: false },
+          {id:utilService.makeId(), txt: 'Todod B', done: false },
+          {id:utilService.makeId(), txt: 'Todod C', done: false },
+          {id:utilService.makeId(), txt: 'Todod D', done: false },
         ],
       },
     backgroundColor: '#65DB2E',

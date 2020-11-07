@@ -12,11 +12,3 @@
   text-transform: capitalize;
   margin-bottom: 0.25rem;
 }
-
-.cheap {
-  color: green;
-}
-
-.pricey {
- color: crimson;
-}

@@ -8,3 +8,13 @@
     src: url(../assets/font/Roboto-Bold.ttf);
 }
 
+@font-face {
+    font-family: poppins;
+    src: url(../assets/font/Poppins-Regular.ttf);
+}
+
+@font-face {
+    font-family: poppins-bold;
+    src: url(../assets/font/Poppins-Bold.ttf);
+}
+

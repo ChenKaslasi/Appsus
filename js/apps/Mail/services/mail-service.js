@@ -7,7 +7,38 @@ export const mailService = {
     saveMailsToStorage,
     removeMail,
     getMailById,
-    getNumOfUnread
+    getNumOfUnread,
+    getEmptymail,
+    save
+}
+
+function save(mail) {
+    if(mail.id){
+        const mailIdx = gMails.findIndex(currMail=>mail.id===currMail.id)
+        gMails.splice(mailIdx,1,mail)
+    }else{
+        mail.id = utilService.makeId();
+        gMails.unshift(mail);
+        saveMailsToStorage()
+        console.log(gMails);
+    }
+    // return Promise.resolve(mail)
+}
+
+function getEmptymail() {
+    return {
+        sender: 'puki',
+        email: 'puki@appsus.com',
+        to:'',
+        subject: '',
+        body: '',
+        isRead: false,
+        starred: false,
+        sent: true,
+        draft: false,
+        sentAt: Date.now(),
+        id: ''
+    }
 }
 
 function getNumOfUnread() {
@@ -48,10 +79,10 @@ function loadMails() {
                 subject: 'New subscribe',
                 body: 'Welcome back thx',
                 isRead: false,
-                starred:false,
-                sent:true,
-                draft:false,
-                sentAt: Date.now(),
+                starred: false,
+                sent: true,
+                draft: false,
+                sentAt: 1551545540594,
                 id: utilService.makeId()
             },
             {
@@ -59,11 +90,11 @@ function loadMails() {
                 email: 'mike@gmail.com',
                 subject: 'Wassap?',
                 body: 'Pick up!',
-                inbox:true,
+                inbox: true,
                 isRead: true,
-                starred:true,
-                sent:false,
-                draft:false,
+                starred: true,
+                sent: false,
+                draft: false,
                 sentAt: 1551133930594,
                 id: utilService.makeId()
             },

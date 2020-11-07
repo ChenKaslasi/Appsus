@@ -7,11 +7,11 @@ export default {
   name: 'mail-app',
   template: `
   <section class="mail-app">
-    <mail-filter @doFilter="setFilter"></mail-filter>
+  <side-bar @open="openCompose"></side-bar>
     <main class="main-container">
-    <side-bar @open="openCompose"></side-bar>
-    <router-view v-if="mails" :mails="mailsToShow"></router-view>
-    <mail-compose v-if="isCompose" @close="closeCompose"></mail-compose>
+      <mail-filter @doFilter="setFilter"></mail-filter>
+      <router-view v-if="mails" :mails="mailsToShow"></router-view>
+      <mail-compose v-if="isCompose" @close="closeCompose"></mail-compose>
     </main>
   </section>
   `,
@@ -20,7 +20,7 @@ export default {
       mails: null,
       filterBy: null,
       folder: null,
-      isCompose: true
+      isCompose: false
     }
   },
   created() {

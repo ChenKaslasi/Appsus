@@ -19,6 +19,10 @@
     font-weight: 400;
 }
 
+.mail-preview.read {
+    background-color: #f1f3f4;
+}
+
 .mail-preview .mail-sender {
     flex-grow: 1;
 }

@@ -3,10 +3,9 @@
     font-size: 0.875rem;
     line-height: 1.428em;
     color: #202124;
-    max-width: 1200px;
+    width: 100%;
     margin: 0 auto;
     border: 1px solid rgb(214, 214, 214);
-    flex-grow: 1;
 }
 
 .mail-details .btn-nav {

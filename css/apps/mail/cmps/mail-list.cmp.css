@@ -1,14 +1,16 @@
 .mail-list-container {
-    max-width: 1200px;
+    width: 100%;
     margin: 0 auto;
-    border: 1px solid rgb(214, 214, 214);
-    flex-grow: 1;
 }
 
-.mail-list-container li:not(:last-of-type){
+.mail-list-container li:not(:last-of-type) {
     border-bottom: 1px solid rgb(214, 214, 214);
 }
 
+.mail-list-container li:first-of-type {
+    border-top: 1px solid rgb(214, 214, 214);
+}
+
 .mail-list-container li:hover {
-   cursor: pointer;
+    cursor: pointer;
 }

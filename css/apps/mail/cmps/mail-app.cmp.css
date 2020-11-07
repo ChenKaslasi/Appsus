@@ -1,3 +1,19 @@
+.mail-app {
+    display: flex;
+    width: 100%;
+}
+
 .mail-app .main-container{
     display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 1em;
+    position: relative;
 }
+
+.mail-app .btn:hover , .mail-app .btn-like:hover{
+    background-color: #dddd;
+    border-radius: 50%;
+    transition: 0.5s;
+    opacity: 1;
+  }

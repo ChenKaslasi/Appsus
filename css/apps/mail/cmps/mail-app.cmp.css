@@ -11,9 +11,9 @@
     position: relative;
 }
 
-.mail-app .btn:hover , .mail-app .btn-like:hover{
+/* .mail-app .btn:hover , .mail-app .btn-like:hover{
     background-color: #dddd;
     border-radius: 50%;
     transition: 0.5s;
     opacity: 1;
-  }
+  } */

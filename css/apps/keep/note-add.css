@@ -1,12 +1,12 @@
 
-.node-add {
+.note-add {
   background-color: #FFFFFF;
   border-radius: 10px;
   width: fit-content;
   margin-bottom: 2rem;
 }
 
-.node-add input {
+.note-add input {
   padding-inline-start: 0.5rem;
  border: none;
  font-size: 1.2rem;
@@ -14,7 +14,7 @@
  min-height: 3rem;
 }
 
-.node-add input:focus {
+.note-add input:focus {
   outline: none;
   border: none;
 }
@@ -22,12 +22,13 @@
 .add-container {
   transition: box-shadow .3s;
   flex-wrap: wrap;
+  border: 2px solid #eee;
+  border-radius: 10px;
 }
 
 .add-container:hover{
-  box-shadow: 0 0 11px rgba(32, 32, 32, 0.2); 
+  box-shadow: 0 0 11px rgba(32, 32, 32, 0.3); 
 }
-
 
 .add-container i{
   font-size: 20px !important;

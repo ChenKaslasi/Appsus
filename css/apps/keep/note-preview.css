@@ -1,9 +1,13 @@
 .note-preview {
-  border: 2px solid black;
   min-width: 250px;
   height: fit-content;
   position: relative;
   max-width: 300px;
+  transition: box-shadow .3s;
+}
+
+.note-preview:hover {
+  box-shadow: 0 0 11px rgba(32, 32, 32, 0.8); 
 }
 
 .grabing {
@@ -39,7 +43,7 @@
 /* Note controls */
 
 .note-controls {
-  opacity: 0.3;
+  opacity: 0;
   transition: opacity 0.3s;
 
 }

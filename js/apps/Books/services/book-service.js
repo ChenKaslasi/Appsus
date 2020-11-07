@@ -72,7 +72,7 @@ function _crateBooks() {
           "Computers",
           "Hack"
         ],
-        "thumbnail": "http://bookcoverarchive.com/wp-content/uploads/2020/07/8ecceb85-a50f-4e5d-a739-bec11f2373c5.jpeg",
+        "thumbnail": "assets/images/books/nature.jpeg",
         "language": "en",
         "listPrice": {
           "amount": 109,
@@ -99,7 +99,7 @@ function _crateBooks() {
           "Computers",
           "Hack"
         ],
-        "thumbnail": "http://bookcoverarchive.com/wp-content/uploads/2020/08/tyll-4.jpg",
+        "thumbnail": "assets/images/books/tyll.jpg",
         "language": "sp",
         "listPrice": {
           "amount": 44,
@@ -122,7 +122,7 @@ function _crateBooks() {
           "Computers",
           "Hack"
         ],
-        "thumbnail": "http://bookcoverarchive.com/wp-content/uploads/2016/08/SquareSpace6.jpg",
+        "thumbnail": "assets/images/books/umbrellas.jpg",
         "language": "he",
         "listPrice": {
           "amount": 108,
@@ -149,7 +149,7 @@ function _crateBooks() {
           "Computers",
           "Hack"
         ],
-        "thumbnail": "http://bookcoverarchive.com/wp-content/uploads/2020/07/The-Everlasting-final-cover.jpg",
+        "thumbnail": "assets/images/books/Everlasting.jpg",
         "language": "en",
         "listPrice": {
           "amount": 30,
@@ -176,7 +176,7 @@ function _crateBooks() {
           "Computers",
           "Hack"
         ],
-        "thumbnail": "http://bookcoverarchive.com/wp-content/uploads/2020/07/91bh9jVbRZL.jpg",
+        "thumbnail": "assets/images/books/Schisms.jpg",
         "language": "sp",
         "listPrice": {
           "amount": 19,
@@ -203,7 +203,7 @@ function _crateBooks() {
           "Computers",
           "Hack"
         ],
-        "thumbnail": "http://bookcoverarchive.com/wp-content/uploads/2016/03/A1Pim60eMZL.jpg",
+        "thumbnail": "assets/images/books/Goethe.jpg",
         "language": "en",
         "listPrice": {
           "amount": 91,
@@ -226,7 +226,7 @@ function _crateBooks() {
           "Computers",
           "Hack"
         ],
-        "thumbnail": "http://bookcoverarchive.com/wp-content/uploads/2016/03/Image-2016-03-17-at-2.26.00-PM.png",
+        "thumbnail": "assets/images/books/Cease.png",
         "language": "he",
         "listPrice": {
           "amount": 90,
@@ -253,7 +253,7 @@ function _crateBooks() {
           "Computers",
           "Hack"
         ],
-        "thumbnail": "http://bookcoverarchive.com/wp-content/uploads/2015/10/visible-man.jpg",
+        "thumbnail": "assets/images/books/Noval.jpg",
         "language": "he",
         "listPrice": {
           "amount": 176,
@@ -276,7 +276,7 @@ function _crateBooks() {
           "Computers",
           "Hack"
         ],
-        "thumbnail": "http://bookcoverarchive.com/wp-content/uploads/2011/03/cubierta_Pale.jpg",
+        "thumbnail": "assets/images/books/Pale.jpg",
         "language": "sp",
         "listPrice": {
           "amount": 116,
@@ -303,7 +303,7 @@ function _crateBooks() {
           "Computers",
           "Hack"
         ],
-        "thumbnail": "http://bookcoverarchive.com/wp-content/uploads/amazon/stolen_world.jpg",
+        "thumbnail": "assets/images/books/Stolen.jpg",
         "language": "en",
         "listPrice": {
           "amount": 145,
@@ -330,7 +330,7 @@ function _crateBooks() {
           "Computers",
           "Hack"
         ],
-        "thumbnail": "http://bookcoverarchive.com/wp-content/uploads/amazon/the_colossus_of_maroussi.jpg",
+        "thumbnail": "assets/images/books/Colossus.jpg",
         "language": "sp",
         "listPrice": {
           "amount": 157,
@@ -353,7 +353,7 @@ function _crateBooks() {
           "Computers",
           "Hack"
         ],
-        "thumbnail": "http://bookcoverarchive.com/wp-content/uploads/amazon/winchell.jpg",
+        "thumbnail": "assets/images/books/Winchell.jpg",
         "language": "sp",
         "listPrice": {
           "amount": 57,

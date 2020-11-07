@@ -17,9 +17,7 @@ export default {
       <note-filter @doFilter="setFilter" />
       <note-add class="flex justify-center justify-center align-center"/>
     </div>
-  <hr>
   <note-list :notes="notesToShow" pinned="true"/> 
-  <hr>
   <note-list :notes="notesToShow" pinned="false"/> 
   
   </section>

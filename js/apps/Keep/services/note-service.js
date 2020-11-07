@@ -200,9 +200,9 @@ function _createNotes() {
       id: utilService.makeId(),
       isPinned: true,
       info: {
-        title:`ABABABABABA`
+        title: `In Switzerland it is illegal to own just one guinea pig.`
       },
-      backgroundColor: '#FFFFFF',
+      backgroundColor: '#EEFF1D',
     },
     {
       type: 'noteImg',
@@ -230,12 +230,21 @@ function _createNotes() {
     backgroundColor: '#65DB2E',
   },
   {
+    type: 'noteText',
+    id: utilService.makeId(),
+    isPinned: false,
+    info: {
+      title: `Banging your head against a wall for one hour burns 150 calories.`
+    },
+    backgroundColor: '#EEFF1D',
+  },
+  {
     type: 'noteVideo',
     id: utilService.makeId(),
     isPinned: false,
     info: {
       url: 'https://www.youtube.com/watch?v=PIU80XHVsus&ab_channel=MusicLab',
-      title: 'ABABABA'
+      title: '🎵 Music '
     },  
     backgroundColor: '#FFFFFF',
   },

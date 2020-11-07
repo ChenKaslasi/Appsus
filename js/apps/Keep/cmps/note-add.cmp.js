@@ -2,7 +2,7 @@ import {noteService} from '../services/note-service.js';
 
 export default {
   template: `
-  <section class="node-add flex ">
+  <section class="note-add flex ">
     <div class="add-container flex justify-center align-center">
       <input type="text" :placeholder="activeNote.txt" v-model="content" @keydown.enter.prevent="getNewNote">
       <div >

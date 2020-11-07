@@ -1,9 +1,15 @@
 .note-filter {
   margin-bottom: 2rem;
   width: fit-content;
-  background-color: #fff;
   padding-inline-start: 0.5rem;
   min-height: 3rem;
+  transition: box-shadow .3s;
+  background-color: #ddd;
+  border-radius: 10px;
+}
+
+.note-filter:hover {
+  box-shadow: 0 0 11px rgba(32, 32, 32, 0.2);
 }
 
 
@@ -16,13 +22,15 @@
   font-size: 1.2rem;
   outline: none;
   border: none;
+  background-color: #ddd;
 }
 
-.note-filter label input:focus {
+.note-filter label input:focus { 
   border: none;
 }
 
 .note-filter select {
   outline: 0;
   border: 0;
+  background-color: #ddd;
 }

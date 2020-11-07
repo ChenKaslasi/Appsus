@@ -46,6 +46,7 @@ function addReview(bookId, review) {
   review.id = utilService.makeId();
   getBookById(bookId)
     .then(book => {
+      review.txt = review.txt.length < 1 ? 'No text added' : review.txt
       book.reviews.push(review)
       utilService.storeToStorage(BOOKS_KEY, gBooks)
     })

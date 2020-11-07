@@ -2,6 +2,28 @@
   padding: 1rem;
 }
 
+/* back button */
+
+.book-container .back-btn {
+  padding: 0.5rem;
+  font-size: 1.5rem ;
+  font-weight: bold;
+  border: none;
+  background-color: inherit;
+  cursor: pointer;
+  letter-spacing: 0.1rem;
+  transition: background-color  0.4s;
+  border-radius: 10px;
+}
+
+.book-container .back-btn:hover {
+  transition: 0.4s;
+  color: #eee;
+  background-color: black;
+}
+
+/* back button */
+
 .book-container .book-image {
  flex: 1;
 }

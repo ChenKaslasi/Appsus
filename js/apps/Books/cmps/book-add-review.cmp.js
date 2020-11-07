@@ -31,7 +31,6 @@ export default {
     return {
       onReviewAdd: false,
       reviewBtnTxt: 'Add review',
-      emptyReview: {name: '', rate: 5, readAt: '', txt: ''},
       review: {name: '', rate: 5, readAt: '', txt: ''},
     }
   },
@@ -39,7 +38,7 @@ export default {
     saveReview() {
       booksService.addReview(this.book.id, this.review);
       this.$emit('reviewAdd',this.review)
-      this.review = this.emptyReview;
+      this.review = {name: '', rate: 5, readAt: '', txt: ''}
     },
   },
 }

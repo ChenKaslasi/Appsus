@@ -8,7 +8,7 @@
 }
 
 .book-list .header {
-  font-size: 3rem;
+  font-size: 1.5rem;
   font-weight: 500;
 }
 
@@ -50,6 +50,8 @@
   border-radius: 10px;
   background-color: #ffff;
   cursor: pointer;
+  padding: 0.25rem;
+  font-weight: 700;
 }
 
 .book-list ul .more-info-btn:hover{

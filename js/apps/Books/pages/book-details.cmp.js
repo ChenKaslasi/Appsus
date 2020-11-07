@@ -2,7 +2,7 @@ import bookDescription from '../cmps/book-description.cmp.js';
 import bookAddReview from '../cmps/book-add-review.cmp.js';
 import bookShowReviews from '../cmps/book-show-reviews.cmp.js';
 import {booksService} from '../services/book-service.js';
-// import {eventBus, EVENT_SHOW_MSG} from '../services/event-bus.service.js'
+import {eventBus, EVENT_SHOW_MSG} from '../../../services/event-bus.js';
 
 
 export default {
@@ -26,10 +26,13 @@ export default {
           <li :class="['price',evaluatePrice]">Price: {{getPrice}} {{getCurrency}}</li>
         </ul>
         <book-description :description="book.description"/>
-        <ul class="book-computed">
+        <ul class="book-computed flex justify-between">
+          <div >
             <li class="book-length">{{evaluateBookLength}}</li>
             <li class="book-seniority">{{evaluateBookSeniority}}</li>
             <li class="book-onsale" v-if="isOnSale">On sale!!</li>
+          </div>
+          <button class="back-btn" @click="setPreviewPage">Go back &raquo;</button>
         </ul>
       </div>
     </div>
@@ -45,16 +48,19 @@ export default {
     }
   },
   methods: {
+    setPreviewPage() {
+      this.$router.go()
+    },
     reviewAdded(review) {
       let parsedReview = JSON.parse(JSON.stringify(review));
-      console.log(this.book);
+      const id = this.$route.params.bookId
       this.book.reviews.push(parsedReview)
       this.reviewSavedSuccess()
     },
 
     reviewSavedSuccess() {
     const msg = {txt: 'Review Saved Successffully',type: 'success'}
-    // eventBus.$emit(EVENT_SHOW_MSG, msg)
+    eventBus.$emit(EVENT_SHOW_MSG, msg)
     }
   },
   computed: {

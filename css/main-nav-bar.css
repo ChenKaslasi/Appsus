@@ -1,16 +1,18 @@
-.app-header {
-  display: flex;
+
+ .app-header {
   justify-content: space-between;
-  align-items: center;
+  padding: 0 2rem;
   border-bottom: 1rem;
   background-color: rgb(133, 195, 216);
+  z-index: 100;
 }
 
-
 .app-header .logo {
-  font-family: poppins-bold,sans-serif;
+  font-family: poppins,sans-serif;
   color: #fff;
   transition: text-shadow 0.4s;
+  font-size: 1.25;
+  font-weight: 500;
 }
 
 .app-header .logo:hover {
@@ -18,18 +20,43 @@
   text-shadow: -4px 0px 8px #000000;
 }
 
-.app-header a{
-  padding: 2rem 0;
-  margin: 0 2rem ;
+.nav-container .hemburger {
+  cursor: pointer;
+  color: #fff;
+  font-size: 1.5rem;
 }
 
-.app-header nav>*{
-font-size: 1.3rem;
-color: #fff;
-transition: text-shadow 0.4s;
+.nav-container ul {
+  position: absolute;
+  top: 60px;
+  right: 25px;
+  max-width: 250px;
+  padding: 0.1rem;
+  border: 5px solid rgb(133, 195, 216);
+  background-color: #ffff;
+  z-index: 10;
 }
 
-.app-header nav>*:hover{
-transition: 0.4s;
-text-shadow: -4px 0px 4px #000000;
+.nav-container ul .triangle{
+  position: absolute;  
+  right: 3px;
+  top: -15px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 10px 15px 10px;
+  border-color: transparent transparent rgb(133, 195, 216) transparent;
+}
+
+.nav-container ul a{
+  position: relative;
+  margin: 0.4rem;
+  font-size: 2rem !important;
+  opacity: 0.5;
+  transition: opacity 0.3s;
+}
+
+.nav-container ul a:hover{
+  opacity: 1;
+  transition: 0.3s;
 }

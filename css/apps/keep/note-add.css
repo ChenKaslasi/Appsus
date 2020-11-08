@@ -10,7 +10,7 @@
   padding-inline-start: 0.5rem;
  border: none;
  font-size: 1.2rem;
- min-width: 420px;
+ min-width: 200px;
  min-height: 3rem;
 }
 
@@ -51,4 +51,10 @@
 
 .active {
   color: red;
+}
+
+@media (min-width: 700px) {
+  .note-add input {
+  min-width: 420px;
+  }
 }

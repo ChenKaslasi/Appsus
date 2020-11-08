@@ -7,11 +7,13 @@ export default {
   name: 'mail-app',
   template: `
   <section class="mail-app">
-  <side-bar @open="openCompose"></side-bar>
+    <side-bar class="side-nav" @open="openCompose" :class="{'open':isSideBarOpen}"></side-bar>
     <main class="main-container">
       <mail-filter @doFilter="setFilter"></mail-filter>
-      <router-view v-if="mails" :mails="mailsToShow"></router-view>
+      <router-view @open="openCompose" v-if="mails" :mails="mailsToShow"></router-view>
       <mail-compose v-if="isCompose" @close="closeCompose"></mail-compose>
+      <button  @click="isSideBarOpen = !isSideBarOpen">X</button>
+      <div :class="{'screen' :isSideBarOpen}" @click="isSideBarOpen = !isSideBarOpen"></div>
     </main>
   </section>
   `,
@@ -20,7 +22,8 @@ export default {
       mails: null,
       filterBy: null,
       folder: null,
-      isCompose: false
+      isCompose: false,
+      isSideBarOpen:false
     }
   },
   created() {

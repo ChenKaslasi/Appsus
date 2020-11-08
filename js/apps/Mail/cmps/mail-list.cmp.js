@@ -11,6 +11,7 @@ export default {
                 <mail-preview :mail="currMail" @click.native="mailClicked(currMail)"></mail-preview>
             </li>
         </ul>
+        <button class="write-btn" @click="emitOpenCompose"><i class="icon fas fa-pen"></i></button>
     </section>
     `,
     components: {
@@ -24,6 +25,9 @@ export default {
             }
             const folder = this.$route.params.folder;
             this.$router.push(`/mail/${folder}/${mail.id}`);
+        },
+        emitOpenCompose() {
+            this.$emit('open')
         }
     }
 }

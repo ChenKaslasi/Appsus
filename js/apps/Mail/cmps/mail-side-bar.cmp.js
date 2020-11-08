@@ -12,9 +12,9 @@ export default {
     </ul>
 </section>
 `,
-methods: {
-    emitOpenCompose() {
-        this.$emit('open')
+    methods: {
+        emitOpenCompose() {
+            this.$emit('open')
+        }
     }
-}
 }

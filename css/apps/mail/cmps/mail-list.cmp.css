@@ -14,3 +14,14 @@
 .mail-list-container li:hover {
     cursor: pointer;
 }
+
+.mail-list-container .write-btn {
+    position: absolute;
+    bottom:250px;
+    left: 0;
+    /* margin: 0 0 6em 5em ; */
+}
+
+.write-btn .icon {
+    font-size: 2em;
+}

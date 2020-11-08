@@ -156,9 +156,9 @@ function _getEmptyNote(noteType) {
         id: utilService.makeId(),
         isPinned: true,
         info: {
-          title:`new text note!`
+          title:`New text note!`
         },
-        backgroundColor: '#FFFFFF',
+        backgroundColor: '#8775a8',
     }
     case 'noteVideo' :
     return {
@@ -169,7 +169,7 @@ function _getEmptyNote(noteType) {
       url: 'https://www.youtube.com/watch?v=PIU80XHVsus&ab_channel=MusicLab',
       title: 'new video note !'
     },  
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#EEFF1D',
     }
   }
 }
@@ -218,6 +218,16 @@ function _createNotes() {
       id: utilService.makeId(),
       isPinned: true,
       info: {
+        url: 'https://contents.mediadecathlon.com/p1333176/k$8f9a50e16a68289f8e8526af3944197d/-mid-1-.jpg?&f=400x400',
+        title: 'My korkinet',
+      },  
+      backgroundColor: '#65DB2E',
+    },
+    {
+      type: 'noteImg',
+      id: utilService.makeId(),
+      isPinned: true,
+      info: {
         url: 'https://media.giphy.com/media/5Zesu5VPNGJlm/giphy.gif',
         title: 'Delivery 2 - THURSDAY 2100',
       },  
@@ -239,6 +249,16 @@ function _createNotes() {
     backgroundColor: '#65DB2E',
   },
   {
+    type: 'noteImg',
+    id: utilService.makeId(),
+    isPinned: false,
+    info: {
+      url: 'https://media.giphy.com/media/Oj5w7lOaR5ieNpuBhn/giphy.gif',
+      title: 'Delivery 3 - FINAL SATURDAY 2100',
+    },  
+    backgroundColor: '#65DB2E',
+  },
+  {
     type: 'noteText',
     id: utilService.makeId(),
     isPinned: false,
@@ -256,16 +276,6 @@ function _createNotes() {
       title: '🎵 Music '
     },  
     backgroundColor: '#FFFFFF',
-  },
-  {
-    type: 'noteImg',
-    id: utilService.makeId(),
-    isPinned: false,
-    info: {
-      url: 'https://media.giphy.com/media/Oj5w7lOaR5ieNpuBhn/giphy.gif',
-      title: 'Delivery 3 - FINAL SATURDAY 2100',
-    },  
-    backgroundColor: '#65DB2E',
   },
   ]
   utilService.storeToStorage(NOTES_KEY, defaultNotes);

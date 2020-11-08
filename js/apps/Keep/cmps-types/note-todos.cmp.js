@@ -15,7 +15,7 @@ export default {
           <input v-else type="text" placeholder="Add task" v-model="editContent" @keydown.enter.prevent="confirmEditTodo(todo.id,idx)">
           <div>
             <input type="checkbox" @click.stop="markDone(todo.id)" v-model="todo.done">
-              <button @click="editTodo(idx)"><i class="fa fa-edit"></i></button>
+              <button @click="editTodo(todo.id)"><i class="fa fa-edit"></i></button>
               <button @click="removeTodo(todo.id)"><i class="fa fa-trash"></i></button>
           </div>
           </label>
@@ -49,13 +49,12 @@ export default {
     removeTodo(todoId) {
       noteService.removeNoteTodo(this.noteId,todoId)
     },
-    editTodo(idx) {
-      this.todos[idx].isOnEdit = !this.todos[idx].isOnEdit
+    editTodo(todoId) {
+      noteService.toggleTodoToEdit(this.noteId,todoId) 
     },
     confirmEditTodo(todoId,idx) {
       noteService.editNoteTodo(this.noteId,todoId,this.editContent)
       this.todos[idx].isOnEdit = false;
-      // this.renderKey++
       this.editContent =''
     }
   },

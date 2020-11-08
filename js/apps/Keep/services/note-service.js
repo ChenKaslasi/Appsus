@@ -11,6 +11,7 @@ export const noteService = {
   addNote,
   addNoteTodo,
   removeNoteTodo,
+  toggleTodoToEdit,
   editNoteTodo,
   deleteNote,
   copyNote,
@@ -88,6 +89,14 @@ function removeNoteTodo(noteId,todoId) {
   })
 }
 
+function toggleTodoToEdit(noteId,todoId) {
+  _getNoteById(noteId).then(note => {
+    const todo = note.info.todos.find( todo => todo.id === todoId)
+    todo.isOnEdit = !todo.isOnEdit
+    utilService.storeToStorage(NOTES_KEY,gNotes)
+  })
+}
+
 function editNoteTodo(noteId,todoId,content) {
   _getNoteById(noteId).then(note => {
     const todo = note.info.todos.find( todo => todo.id === todoId)
@@ -133,10 +142,10 @@ function _getEmptyNote(noteType) {
       info: {
         title: 'new Todo list ',
         todos: [
-          {id:utilService.makeId(), txt: 'Todo A', done: false },
-          {id:utilService.makeId(), txt: 'Todo B', done: false },
-          {id:utilService.makeId(), txt: 'Todo C', done: false },
-          {id:utilService.makeId(), txt: 'Todo D', done: false },
+          {id:utilService.makeId(), txt: 'Todo A', done: false,isOnEdit: false},
+          {id:utilService.makeId(), txt: 'Todo B', done: false,isOnEdit: false },
+          {id:utilService.makeId(), txt: 'Todo C', done: false,isOnEdit: false },
+          {id:utilService.makeId(), txt: 'Todo D', done: false,isOnEdit: false },
         ],
       },
     backgroundColor: '#EEFF1D',
@@ -187,10 +196,10 @@ function _createNotes() {
       info: {
         title: 'Todo 1st list ',
         todos: [
-          {id:utilService.makeId(), txt: 'Todo A', done: false },
-          {id:utilService.makeId(), txt: 'Todo B', done: false },
-          {id:utilService.makeId(), txt: 'Todo C', done: false },
-          {id:utilService.makeId(), txt: 'Todo D', done: false },
+          {id:utilService.makeId(), txt: 'Todo A', done: false ,isOnEdit: false},
+          {id:utilService.makeId(), txt: 'Todo B', done: false ,isOnEdit: false},
+          {id:utilService.makeId(), txt: 'Todo C', done: false ,isOnEdit: false},
+          {id:utilService.makeId(), txt: 'Todo D', done: false ,isOnEdit: false},
         ],
       },
     backgroundColor: '#EEFF1D',
@@ -221,10 +230,10 @@ function _createNotes() {
       info: {
         title: 'Todo 2nd list ',
         todos: [
-          {id:utilService.makeId(), txt: 'Todod A', done: false },
-          {id:utilService.makeId(), txt: 'Todod B', done: false },
-          {id:utilService.makeId(), txt: 'Todod C', done: false },
-          {id:utilService.makeId(), txt: 'Todod D', done: false },
+          {id:utilService.makeId(), txt: 'Todod A', done: false ,isOnEdit: false},
+          {id:utilService.makeId(), txt: 'Todod B', done: false ,isOnEdit: false},
+          {id:utilService.makeId(), txt: 'Todod C', done: false ,isOnEdit: false},
+          {id:utilService.makeId(), txt: 'Todod D', done: false ,isOnEdit: false},
         ],
       },
     backgroundColor: '#65DB2E',

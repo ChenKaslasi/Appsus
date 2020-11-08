@@ -31,10 +31,6 @@
     flex-grow: 2;
 }
 
-/*.mail-preview .mail-sent-at {
-    flex-grow: 1;
-} */
-
 .mail-preview .icon.fas.fa-star.starred {
     color: #f3d277;
 }
@@ -48,10 +44,6 @@
     position: absolute;
     right: 0.75em;
 }
-
-/* .buttons-container .btn {
-    background-color: inherit;
-} */
 
 .buttons-container .icon {
     font-size: 1.5em !important;

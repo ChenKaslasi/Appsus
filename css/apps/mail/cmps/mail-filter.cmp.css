@@ -24,12 +24,23 @@
     border-radius: 0.75em;
 }
 
-.mail-filter .icon {
-    margin-inline-end: 0.5em;
+.mail-filter .icon.fa-search {
+    visibility: visible;
 }
 
-@media (max-width: 580px) {
+.mail-filter .hamburger {
+    background-color: transparent;
+    visibility: hidden;
+}
+
+@media (max-width: 880px) {
     .mail-filter .filter-container {
         width: 100%;
+    }
+    .mail-filter .hamburger {
+        visibility: visible;
+    }
+    .mail-filter .icon.fa-search {
+        visibility: hidden;
     }
 }

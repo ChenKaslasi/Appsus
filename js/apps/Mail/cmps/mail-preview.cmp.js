@@ -7,7 +7,7 @@ export default {
     <section class="mail-preview" :class="isRead"  @mouseover="toggleShouldShowButtons" @mouseout="toggleShouldShowButtons">
          <button class="btn starred-btn" @click.stop="toggleStarred()"><i class="icon" :class="isStarred"></i></button>
         <div class="mail-sender">{{mail.sender}}</div>
-        <div class="mail-body"><span class="mail-subject">{{mail.subject}}</span> - {{mail.body}}</div>
+        <div class="mail-body"><span class="mail-subject">{{mail.subject}}</span> - {{textToShow}}</div>
         <div class="mail-sent-at">{{sentAt}}</div>
         <div v-show="shouldShowButtons" class="buttons-container">
             <button class="btn" @click.stop="deleteMail()"><i class="icon fas fa-trash trash"></i></button>
@@ -36,7 +36,13 @@ export default {
         isOpen() {
             if (this.mail.isRead) return 'fa-envelope-open';
             else return 'fa-envelope';
-        }
+        },
+        textToShow() {
+            const txt = this.mail.body;
+            if (txt.length > 50) {
+                return txt.substring(0, 50) + "...";
+            } else return txt;
+        },
     },
     methods: {
         toggleShouldShowButtons() {
@@ -54,5 +60,5 @@ export default {
             mailService.removeMail(this.mail.id)
                 .then(() => console.log('success'))
         }
-    }
+    },
 }

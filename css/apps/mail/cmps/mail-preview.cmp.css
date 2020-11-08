@@ -20,7 +20,7 @@
 }
 
 .mail-preview.read {
-    background-color: #f1f3f4;
+    background-color: #ebebeb;
 }
 
 .mail-preview .mail-sender {
@@ -45,6 +45,25 @@
     right: 0.75em;
 }
 
+.mail-preview.read .buttons-container {
+    background-color: inherit;
+}
+
+.mail-preview .buttons-container {
+    background-color: #fff;
+}
+
 .buttons-container .icon {
     font-size: 1.5em !important;
+}
+
+@media (max-width: 580px) {
+    .mail-preview{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .starred-btn {
+        order: 1;
+    }
 }

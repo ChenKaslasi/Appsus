@@ -14,7 +14,7 @@ export default {
     <input v-model="mailToEdit.subject" type="text" name="subject" placeholder="Subject"/>
     <textarea v-model="mailToEdit.body" type="text" name="mailBody" rows="15"></textarea>
     <footer class="form-footer">
-      <button class="btn btn-send" @click="saveMail">Send</button>
+      <button class="btn-send" @click="saveMail">Send</button>
       <!-- <button class="btn btn-trash" @click="deleteMail()"><i class="icon fas fa-trash"></i></button> -->
     </footer>
   </form>

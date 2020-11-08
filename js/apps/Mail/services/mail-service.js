@@ -74,13 +74,49 @@ function loadMails() {
     if (!mails || !mails.length) {
         mails = [
             {
-                sender: 'eBay',
-                email: 'ebay@reply5.ebay.com',
-                subject: 'New subscribe',
-                body: 'Welcome back thx',
+                sender: 'Action required',
+                email: 'noreply@github.com',
+                subject: 'New Google Cloud Platform',
+                body: 'Hi @Puki, We have detected that you recently authenticated to GitHub using an older version of Git for Windows. After November 13th, 2020 GitHub is changing how users authenticate when using Git for Windows, and willrequire the use of a web browser to authenticate to GitHub. To be able to login via web browser, userswill need to update to the latest version of Git for Windows. You can download the latest version at:',
                 isRead: false,
                 starred: false,
-                sent: true,
+                sent: false,
+                draft: false,
+                sentAt: 181545540594,
+                id: utilService.makeId()
+            },
+            {
+                sender: 'Google Cloud Platform',
+                email: 'noreply@taasuka.gov.il',
+                subject: 'New Google Cloud Platform',
+                body: 'Hello Google Cloud Platform Customer, We are sending this message to let you know about the following updates to the Google Cloud Platform Subprocessors list:We are adding Canonical Group Limited and its affiliates We are adding SGS Labor de Mexico, S. de R.L. de C.V. We are adding Achieve Internet, Inc. We are adding SID Global Solutions, LLCYou can find information about the tasks our Subprocessors perform on our Google Cloud Platform Subprocessors list.',
+                isRead: true,
+                starred: false,
+                sent: false,
+                draft: false,
+                sentAt: 1751545540594,
+                id: utilService.makeId()
+            },
+            {
+                sender: 'Fox Racing',
+                email: 'reply@email.foxracing.com',
+                subject: 'Meet the V3 RS Helmet',
+                body: 'NEED HELP? CUSTOMER SUPPORT CENTER 1-888-369-7223 Free Shipping offer is good for Standard Ground Shipping in the mainland United States only. If you choose Express Shipping, additional charges will apply.',
+                isRead: true,
+                starred: false,
+                sent: false,
+                draft: false,
+                sentAt: 1651545540594,
+                id: utilService.makeId()
+            },
+            {
+                sender: 'eBay',
+                email: 'ebay@reply5.ebay.com',
+                subject: 'Upgrade to a smart home',
+                body: 'Learn More to protect yourself from Spoof (fake) e-mails eBay International AG sent this e-mail to you at eladr14@gmail.com because your Notification Preferences indicate that you want to receive information about Newsletters, Promotions & Events.',
+                isRead: false,
+                starred: false,
+                sent: false,
                 draft: false,
                 sentAt: 1551545540594,
                 id: utilService.makeId()
@@ -90,7 +126,6 @@ function loadMails() {
                 email: 'mike@gmail.com',
                 subject: 'Wassap?',
                 body: 'Pick up!',
-                inbox: true,
                 isRead: true,
                 starred: true,
                 sent: false,

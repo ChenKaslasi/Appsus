@@ -5,7 +5,7 @@ export default {
   <section class="mail-details">
     <nav class="btn-nav">
       <router-link :to="previousPage" class="btn back"><i class="icon fa fa-arrow-left"></i></router-link>
-      <button class="btn trash" @click="deleteMail()"><i class="icon fas fa-trash"></i></button>
+    <button class="btn trash" @click="deleteMail()"><i class="icon fas fa-trash"></i></button>
     </nav>
     <main v-if="mail" class="main-content">
       <h2>{{mail.subject}}</h2>

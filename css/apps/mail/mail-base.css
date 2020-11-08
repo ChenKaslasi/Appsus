@@ -10,3 +10,24 @@ h2 {
 ul {
     list-style: none;
 }
+
+.mail-app .btn {
+    padding: 1em;
+    background-color: transparent;
+}
+
+.mail-app .btn:hover {
+    background-color: #dddd;
+    border-radius: 50%;
+    transition: 0.5s;
+    opacity: 1;
+    /* padding: 1em; */
+    text-align: center;
+}
+
+/* .mail-app .btn:hover {
+    background-color: #dddd;
+    border-radius: 50%;
+    transition: 0.5s;
+    opacity: 1;
+} */

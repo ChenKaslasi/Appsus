@@ -13,8 +13,6 @@
     position: relative;
 }
 
-
-
 @media (max-width: 880px) {
     .side-nav {
         position: absolute;
@@ -43,10 +41,3 @@
         transition: opacity .8s;
     }
 }
-
-/* .mail-app .icon:hover , .mail-app .btn-like:hover{
-    background-color: #dddd;
-    border-radius: 50%;
-    transition: 0.5s;
-    opacity: 1;
-  } */

@@ -1,6 +1,7 @@
 
 
 export default {
+    name:'mail-filter',
     template: `
     <section class="mail-filter">
         <div class="filter-container">
